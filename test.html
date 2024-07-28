@@ -18,15 +18,15 @@
   </table>
 
   <script>
-    fetch('https://script.google.com/macros/s/AKfycbwAPLluFFAHBc1v8hjear6p8h6kaMPQoNcdNN_9iqpUdSD5FnUgwaeTnOSKNUHBOoyNJA/exec')
-      .then(response => response.json())
-      .then(data => {
+    async function fetchData() {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwAPLluFFAHBc1v8hjear6p8h6kaMPQoNcdNN_9iqpUdSD5FnUgwaeTnOSKNUHBOoyNJA/exec');
+        const data = await response.json();
+
         var dataTable = document.getElementById('data-table');
         var tbody = dataTable.querySelector('tbody');
 
         data.forEach(function(item) {
           var row = document.createElement('tr');
-
 
           var idCell = document.createElement('td');
           idCell.textContent = item.charaID;
@@ -43,7 +43,6 @@
           var sexCell = document.createElement('td');
           sexCell.textContent = item.sex;
 
-
           row.appendChild(idCell);
           row.appendChild(nameCell);
           row.appendChild(hiranameCell);
@@ -52,7 +51,7 @@
 
           tbody.appendChild(row);
         });
-      });
+      };
     console.log("script");
   </script>
 </body>
