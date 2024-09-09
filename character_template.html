@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../../animation.js"></script>
 
     <link rel="stylesheet" href="../../home.css">
-    <link rel="stylesheet" href="character.css">
+    <link rel="stylesheet" href="../character.css">
 </head>
 
 <body>
@@ -32,66 +32,57 @@
         <p id="hiraname"></p>
     </div>
 
-    <!-- スライダー -->
-    <div class="slide-wrapper">
-        <ul class="slides">
-            <li class="slide active"><img id="icon"></li>
-        </ul>
-        <div class="change-btn-wrapper">
-            <div class="change-btn prev-btn">← 前へ</div>
-            <div class="change-btn next-btn">次へ →</div>
-        </div>
-        <div>
-            <p>作：<label id="iconMaker">___</label></p>
-        </div>
-        <p id="introduction"></p>
-    </div>
+    <div class="basic-info">
+        <!-- スライダー -->
+        <div class="slide-wrapper">
+            <ul class="slides">
+                <li class="slide active"><img id="icon"></li>
+            </ul>
+            <div class="change-btn-wrapper">
+                <div class="change-btn prev-btn">← 前へ</div>
+                <div class="change-btn next-btn">次へ →</div>
+            </div>
 
-    <!-- キャラクターシート -->
-    <div class="profile">
-        <table>
-            <tr>
-                <th>年齢</th>
-                <td id="age">
-                </td>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <td>
-                    <p id="sex"></p>
-                </td>
-            </tr>
-            <tr>
-                <th>身長</th>
-                <td>
-                    <p id="height"></p>
-                </td>
-            </tr>
-            <tr>
-                <th>職業</th>
-                <td>
-                    <p id="job"></p>
-                </td>
-            </tr>
-            <tr>
-                <th>誕生日</th>
-                <td>
-                    <p id="birthday"></p>
-                </td>
-            </tr>
-            <tr>
-                <th>色</th>
-                <td>
-                    <p id="charaColor"></p>
-                </td>
-            </tr>
-            <tr>
-                <th>作成者</th>
-                <td>
-                    <a>管理人（ひかる）</a>
-                </td>
-            </tr>
-        </table>
+            <p>作：<label id="iconMaker">___</label></p>
+
+            <p id="introduction"></p>
+        </div>
+
+        <!-- キャラクターシート -->
+        <div class="profile">
+            <table>
+                <tr>
+                    <th>年齢</th>
+                    <td id="age"></td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td id="sex"></td>
+                </tr>
+                <tr>
+                    <th>身長</th>
+                    <td id="height"></td>
+                </tr>
+                <tr>
+                    <th>職業</th>
+                    <td id="job"></td>
+                </tr>
+                <tr>
+                    <th>誕生日</th>
+                    <td id="birthday"></td>
+                </tr>
+                <tr>
+                    <th>色</th>
+                    <td id="charaColor"></td>
+                </tr>
+                <tr>
+                    <th>作成者</th>
+                    <td>
+                        <a>管理人（ひかる）</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div class="detail">

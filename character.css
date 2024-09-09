@@ -1,3 +1,23 @@
 .top {
     text-align: center;
 }
+
+.basic-info {
+    display: flex;
+}
+
+.slide-wrapper {
+    width: 200px;
+}
+
+.profile {
+    width: 300px;
+}
+
+img {
+    width: 200px;
+}
+
+li {
+    list-style: none;
+}
