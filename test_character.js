@@ -33,7 +33,7 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         charaColorElement.textContent = data[charaID - 1].charaColor;
 
         scenarioListElement.innerHTML = change(data[charaID - 1].scenarioList, "\n", "<br>");
-        charaLinkElement.setAttribute = ("href", data[charaID - 1].charaLink);
+        charaLinkElement.setAttribute("href", data[charaID - 1].charaLink);
         freeCommentElement.textContent = change(data[charaID - 1].freeComment);
 
     });
