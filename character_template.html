@@ -34,21 +34,29 @@
 
     <div class="basic-info">
         <!-- スライダー -->
-        <div class="slide-wrapper">
-            <ul class="slides">
-                <li class="slide active"><img id="icon"></li>
-            </ul>
-            <div class="change-btn-wrapper">
-                <div class="change-btn prev-btn">← 前へ</div>
-                <div class="change-btn next-btn">次へ →</div>
+        <div class="characterImage">
+            <div class="slide-wrapper">
+                <div class="change-btn ">
+                    <div class="prev-btn">
+                        <p>&lt;</p>
+                    </div>
+                </div>
+                <ul class="slides">
+                    <li class="slide active"><img id="icon"></li>
+                </ul>
+                <div class="change-btn">
+                    <div class="next-btn">
+                        <p>&gt;</p>
+                    </div>
+                </div>
             </div>
 
-            <p>作：<label id="iconMaker">___</label></p>
+            <p class="iconMaker">作：<label id="iconMaker">___</label></p>
+            <p id="introduction"></p>
         </div>
 
         <!-- キャラクターシート -->
         <div class="profile">
-            <p id="introduction"></p>
             <table>
                 <tr>
                     <th>年齢</th>

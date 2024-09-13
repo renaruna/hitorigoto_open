@@ -1,22 +1,34 @@
+p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
 .top {
     text-align: center;
 }
 
 .basic-info {
-    width: 700px;
+    width: 800px;
     display: flex;
+    margin: 0 auto;
 }
 
-.slide-wrapper {
+.characterImage {
     width: 400px;
 }
 
-.profile {
-    width: 300px;
+.slide-wrapper {
+    margin: 0 auto;
+    display: flex;
 }
 
 img {
     width: 300px;
+}
+
+.slides {
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -25,17 +37,119 @@ li {
     list-style: none;
 }
 
-.change-btn-wrapper {
-    width: 300px;
+.change-btn {
+    position: relative;
+    width: 50px;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 60px;
+
+    border-radius: 4px;
+    background-color: lightgray;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.prev-btn p,
+.next-btn p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+
+.iconMaker {
+    padding-right: 50px;
+    text-align: right;
+    font-size: 0.8em;
+}
+
+#introduction {
+    border: 5px #eee solid;
+    background-color: #eee;
+
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.profile {
+    margin: 20px 30px;
+    width: 340px;
+}
+
+.profile table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile table tr {
+    border-bottom: solid 2px white;
+}
+
+.profile table tr:last-child {
+    border-bottom: none;
+}
+
+.profile table th {
+    position: relative;
+    width: 25%;
+    background-color: #999;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.profile table th:after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: -10px;
+    border-left: 10px solid #999;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.profile table td {
+    width: 70%;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 0;
+}
+
+.detail {
+    width: 700px;
     margin: 0 auto;
 }
 
-.prev-btn {
-    cursor: pointer;
-    float: left;
+.detail h2 {
+    margin-bottom: 0;
 }
 
-.next-btn {
-    cursor: pointer;
-    float: right;
+.detail p {
+    margin-top: 10px;
 }
