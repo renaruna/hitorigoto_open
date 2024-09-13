@@ -3,11 +3,12 @@
 }
 
 .basic-info {
+    width: 700px;
     display: flex;
 }
 
 .slide-wrapper {
-    width: 200px;
+    width: 400px;
 }
 
 .profile {
@@ -15,9 +16,26 @@
 }
 
 img {
-    width: 200px;
+    width: 300px;
 }
 
 li {
+    padding: 0;
+    text-align: center;
     list-style: none;
+}
+
+.change-btn-wrapper {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.prev-btn {
+    cursor: pointer;
+    float: left;
+}
+
+.next-btn {
+    cursor: pointer;
+    float: right;
 }
