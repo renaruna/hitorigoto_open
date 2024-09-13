@@ -23,7 +23,7 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         hiranameElement.textContent = data[charaID - 1].hiraname;
         iconElement.setAttribute("src", data[charaID - 1].icon);
         iconMakerElement.textContent = data[charaID - 1].iconMaker;
-        introductionElement.textContent = data[charaID - 1].introduction;
+        introductionElement.innerHTML = change(data[charaID - 1].introduction, "\n", "<br>");
 
         ageElement.textContent = data[charaID - 1].age;
         sexElement.textContent = data[charaID - 1].sex;
@@ -32,8 +32,17 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         birthdayElement.textContent = data[charaID - 1].birthday;
         charaColorElement.textContent = data[charaID - 1].charaColor;
 
-        scenarioListElement.textContent = data[charaID - 1].scenarioList;
-        charaLinkElement.textContent = data[charaID - 1].charaLink;
-        freeCommentElement.textContent = data[charaID - 1].freeComment;
+        scenarioListElement.innerHTML = change(data[charaID - 1].scenarioList, "\n", "<br>");
+        charaLinkElement.setAttribute = ("href", data[charaID - 1].charaLink);
+        freeCommentElement.textContent = change(data[charaID - 1].freeComment);
 
     });
+
+function change(text, a, b) {
+    let i = 0;
+    let length = text.length;
+    for (i = 0; i < length; i++) {
+        text = text.replace(a, b);
+    }
+    return text;
+}
