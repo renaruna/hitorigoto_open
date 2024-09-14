@@ -16,7 +16,7 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         }
         // 探索者たちがflexで並べられている→最後の行のボックスたちを左寄せにしたい
         // →空白のボックスを用意する
-        blankNum = data.length - (data.length % 6);
+        blankNum = 6 - (data.length % 6);
         for (let i = 0; i < blankNum; i++) {
             characterHtml += '<a style="width:120px;"></a>'
         }
