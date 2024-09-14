@@ -1,0 +1,35 @@
+p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.top {
+    max-width: 800px;
+    text-align: center;
+    margin: 20px auto;
+    border-bottom: 5px #eee solid;
+}
+
+.member-contents {
+    max-width: 800px;
+}
+
+.member-icon {
+    width: 100px;
+}
+
+.member-content h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.member-character {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.charaImg {
+    width: 200px;
+}
