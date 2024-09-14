@@ -20,6 +20,20 @@ a {
     margin: 20px auto;
 }
 
+.member-content {
+    margin: 30px 0;
+}
+
+.member-content h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.member-content h3 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
 .introduction {
     text-align: center;
 }
@@ -28,13 +42,37 @@ a {
     width: 100px;
 }
 
-.member-content {
-    margin: 20px 0 0 0;
+.member-link {
+    width: fit-content;
+    margin: 10px auto;
+    padding: 5px 15px;
+
+    background-color: #eee;
+    border-radius: 2px;
 }
 
-.member-content h2 {
-    font-size: 20px;
-    margin: 0;
+.member-link p {
+    margin: 2px 0;
+}
+
+.member-link a {
+    color: #6163da;
+}
+
+.member-link a:hover {
+    color: hotpink;
+}
+
+.comment {
+    max-width: 95%;
+    width: fit-content;
+    min-width: 40%;
+    margin: 25px auto;
+
+    padding: 10px;
+
+    border: 2px solid #ccc;
+    border-radius: 2px;
 }
 
 .member-color {
@@ -88,7 +126,6 @@ a {
     border: 2px solid #ccc;
     border-radius: 2px;
     box-shadow: 2px 2px 3px #eee;
-    transition: .3s;
 
     position: relative;
 
@@ -108,5 +145,4 @@ a {
     top: 110px;
 
     background-color: #eee;
-
 }
