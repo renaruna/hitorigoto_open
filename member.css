@@ -20,6 +20,10 @@ a {
     margin: 20px auto;
 }
 
+.introduction {
+    text-align: center;
+}
+
 .member-icon {
     width: 100px;
 }
@@ -33,22 +37,26 @@ a {
     margin: 0;
 }
 
-.manager-color {
+.member-color {
     height: 2em;
+    text-align: center;
 }
 
-.manager-color h2 {
+.member-color h2 {
     font-size: 1em;
+    font-weight: 600;
     display: inline;
     margin-right: 20px;
 }
 
-.manager-color p {
+.member-color p {
     display: inline;
-
-    background-color: pink;
     padding: 2px 50px;
     margin: 0;
+}
+
+#manager-color {
+    background-color: pink;
 }
 
 .member-character {
@@ -62,6 +70,14 @@ a {
 .member-character a {
     padding: 3px 1px;
     margin: 0 auto;
+}
+
+.member-character img {
+    transition: height 0.2s 0.05s linear;
+}
+
+.member-character a:hover img {
+    height: 120px;
 }
 
 .charaImg {
