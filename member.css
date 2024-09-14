@@ -9,14 +9,14 @@ a {
 }
 
 .top {
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
     margin: 20px auto;
     border-bottom: 5px #eee solid;
 }
 
 .member-contents {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 20px auto;
 }
 
@@ -32,6 +32,7 @@ a {
 .member-content h3 {
     font-size: 17px;
     margin: 10px 0;
+    padding-left: 10px;
 }
 
 .introduction {
@@ -106,16 +107,16 @@ a {
 }
 
 .member-character a {
-    padding: 3px 1px;
+    padding: 5px 2px;
     margin: 0 auto;
 }
 
 .member-character img {
-    transition: height 0.2s 0.05s linear;
+    transition: all 0.2s 0.05s linear;
 }
 
 .member-character a:hover img {
-    height: 120px;
+    transform: scale(1.2);
 }
 
 .charaImg {
@@ -133,7 +134,7 @@ a {
 }
 
 .charaImg img {
-    height: 110px;
+    height: 120px;
 }
 
 .charaImg p {
