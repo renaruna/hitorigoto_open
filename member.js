@@ -4,6 +4,7 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         const characterElement = document.getElementById('member-character');
 
         let characterHtml = "";
+        let existCharaNum = 0;
         for (let i = 0; i < data.length; i++) { // i=0のとき charaID=1
             if (data[i].filename == "") {
                 continue;
@@ -13,13 +14,17 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
             characterHtml += '<img src="' + data[i].icon + '">';
             characterHtml += '<p>' + data[i].charaName + '</p>';
             characterHtml += '</div></a>';
+
+            existCharaNum++;
         }
+
         // 探索者たちがflexで並べられている→最後の行のボックスたちを左寄せにしたい
         // →空白のボックスを用意する
-        blankNum = 6 - (data.length % 6);
+        blankNum = 6 - (existCharaNum % 6);
         for (let i = 0; i < blankNum; i++) {
-            characterHtml += '<a style="width:120px;"></a>'
+            characterHtml += '<a style="width:123px;"></a>'
         }
+
         characterElement.innerHTML = characterHtml;
 
     });

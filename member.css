@@ -24,13 +24,31 @@ a {
     width: 100px;
 }
 
-.member-content h2 {
-    font-size: 20px;
+.member-content {
     margin: 20px 0 0 0;
 }
 
-.inline {
+.member-content h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.manager-color {
+    height: 2em;
+}
+
+.manager-color h2 {
+    font-size: 1em;
     display: inline;
+    margin-right: 20px;
+}
+
+.manager-color p {
+    display: inline;
+
+    background-color: pink;
+    padding: 2px 50px;
+    margin: 0;
 }
 
 .member-character {
