@@ -1,4 +1,60 @@
 $(function () {
+    var userAgent = navigator.userAgent; // ユーザーエージェント判定
+
+    //menu右から表示
+    var $home = $('.home-index');
+
+    $('.front').click(function () {
+        $('.front').fadeToggle(250);//250ミリ秒で非表示
+        $('.back').fadeToggle(250);//250ミリ秒で表示
+        $home.animate({ 'marginRight': '400px' }, 500);
+
+        let h = $(window).height();
+        let w = $(window).width();
+        $home.css("height", h);
+        if (window.matchMedia('(max-width: 599px)').matches && w < 600) {
+            $home.css("width", w);
+        }
+    });
+
+    //アイコンを押しても戻る
+    $('.back').click(function () {
+        $('.back').fadeToggle(250);//250ミリ秒で非表示
+        $('.front').fadeToggle(250);//250ミリ秒で表示
+        $home.animate({ 'marginRight': 0 }, 500);
+    });
+
+    //メニューを押しても戻る
+    $home.click(function () {
+        $('.back').fadeToggle(250);//250ミリ秒で非表示
+        $('.front').fadeToggle(250);//250ミリ秒で表示
+        $home.animate({ 'marginRight': 0 }, 500);
+    });
+
+    //元のページを押しても戻る
+    $('.lists').click(function () {
+        $('.back').fadeOut(250);//250ミリ秒で非表示
+        $('.front').fadeIn(250);//250ミリ秒で表示
+        $home.animate({ 'marginRight': 0 }, 500);
+    });
+
+    //メニューのリンクを押しても戻る
+    $('.menu a[href*="#"]').click(function () {
+        $('.back').fadeToggle(250);//250ミリ秒で非表示
+        $('.front').fadeToggle(250);//250ミリ秒で表示
+        $home.animate({ 'marginRight': 0 }, 500);
+    });
+
+    //ページ内リンクへスクロール
+    $('a[href*="#"]').click(function () { //全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK。元は#page-link a[href*="#"]。
+        var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+        var pos = $(elmHash).offset().top;	//idの上部の距離を取得
+        $('body,html').animate({ scrollTop: pos }, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+        return false;
+    });
+
+
+    //トップへ戻るボタン
     var topBtn = $('#page_top');
     topBtn.hide();
 
