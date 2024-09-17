@@ -1,5 +1,4 @@
 * {
-    background-color: #fffff0;
     /* box-sizing: border-box; */
     /* widthやheightの中でborderとpaddingを含むよう調整される */
 }
@@ -10,12 +9,7 @@ p {
 }
 
 a {
-    color: #6163da;
     text-decoration: none;
-}
-
-a:hover {
-    color: hotpink;
 }
 
 /*--- ヘッダー ---*/
@@ -24,8 +18,9 @@ header {
     width: 100%;
     top: 0;
 
-    background-color: #fffff0;
-    box-shadow: 2px 3px 3px #eee;
+    background-color: #fffaf7;
+    /*#fcf6f1*/
+    border-bottom: 2px solid #f5ebdc;
     position: fixed;
     z-index: 10;
 }
