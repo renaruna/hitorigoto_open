@@ -1,5 +1,5 @@
 * {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     /* widthやheightの中でborderとpaddingを含むよう調整される */
 }
 
