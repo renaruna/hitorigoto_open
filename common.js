@@ -4,12 +4,12 @@ $(function () {
 
     //ボタンの表示設定
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 80) {
-            // 画面を80pxスクロールしたら、ボタンを表示する
-            topBtn.fadeIn();
+        if ($(this).scrollTop() > 200) {
+            // 画面を200pxスクロールしたら、800msかけてボタンを表示
+            topBtn.fadeIn(800);
         } else {
-            // 画面が80pxより上なら、ボタンを表示しない
-            topBtn.fadeOut();
+            // 画面が200pxより上なら、800msかけてボタンを非表示
+            topBtn.fadeOut(800);
         }
     });
 
