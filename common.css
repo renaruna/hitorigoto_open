@@ -44,8 +44,8 @@ header {
 /* メニュー */
 .menu-icon {
     font-size: 30px;
-    background: rgba(0, 0, 0, 0);
     /* 透過 */
+    background: rgba(0, 0, 0, 0);
 
     position: fixed;
     top: 10px;
