@@ -63,12 +63,15 @@ header {
 }
 
 .navigator {
-    z-index: 20;
     background-color: #fffaf7;
-    position: fixed;
+
     padding: 50px;
     width: 100%;
     height: 100%;
+
+    position: fixed;
+    bottom: 100%;
+    z-index: 20;
 }
 
 .navigator ul {

@@ -5,29 +5,28 @@ $(function () {
     var $nav = $('.navigator');
 
     $('.front').click(function () {
-        $('.front').fadeOut(250);//250ミリ秒で非表示
-        $('.back').fadeIn(250);//250ミリ秒で表示
+        $('.front').fadeToggle(250);//250ミリ秒で非表示
+        $('.back').fadeToggle(250);//250ミリ秒で表示
+
+        $nav.animate({ bottom: 0 }, 500);
     });
 
     //アイコンを押しても戻る
     $('.back').click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //メニューを押しても戻る
     $nav.click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //メニューのリンクを押しても戻る
     $('.menu a[href*="#"]').click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //ページ内リンクへスクロール
@@ -56,9 +55,7 @@ $(function () {
 
     // ボタンをクリックしたら、スクロールして上に戻る
     topBtn.click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 500);
+        $('body,html').animate({ scrollTop: 0 }, 500);
         return false;
     });
 
