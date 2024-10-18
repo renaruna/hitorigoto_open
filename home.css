@@ -1,0 +1,16 @@
+.home-contents {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.home-contents h2 {
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.home-contents p {
+    margin: 0;
+    padding-left: 40px;
+}
