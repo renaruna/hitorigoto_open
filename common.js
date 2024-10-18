@@ -2,47 +2,32 @@ $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
     //menu右から表示
-    var $home = $('.home-index');
+    var $nav = $('.navigator');
 
     $('.front').click(function () {
-        $('.front').fadeToggle(250);//250ミリ秒で非表示
-        $('.back').fadeToggle(250);//250ミリ秒で表示
-        $home.animate({ 'marginRight': '400px' }, 500);
-
-        let h = $(window).height();
-        let w = $(window).width();
-        $home.css("height", h);
-        if (window.matchMedia('(max-width: 599px)').matches && w < 600) {
-            $home.css("width", w);
-        }
+        $('.front').fadeOut(250);//250ミリ秒で非表示
+        $('.back').fadeIn(250);//250ミリ秒で表示
     });
 
     //アイコンを押しても戻る
     $('.back').click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $home.animate({ 'marginRight': 0 }, 500);
+        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //メニューを押しても戻る
-    $home.click(function () {
+    $nav.click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $home.animate({ 'marginRight': 0 }, 500);
-    });
-
-    //元のページを押しても戻る
-    $('.lists').click(function () {
-        $('.back').fadeOut(250);//250ミリ秒で非表示
-        $('.front').fadeIn(250);//250ミリ秒で表示
-        $home.animate({ 'marginRight': 0 }, 500);
+        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //メニューのリンクを押しても戻る
     $('.menu a[href*="#"]').click(function () {
         $('.back').fadeToggle(250);//250ミリ秒で非表示
         $('.front').fadeToggle(250);//250ミリ秒で表示
-        $home.animate({ 'marginRight': 0 }, 500);
+        $nav.animate({ 'marginRight': 0 }, 500);
     });
 
     //ページ内リンクへスクロール
