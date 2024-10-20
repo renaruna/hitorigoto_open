@@ -4,7 +4,31 @@ $(function () {
     /* menuボタン押して、navigator全画面表示 */
     var $nav = $('.navigator');
 
-    console.log("読み込まれた");
+    console.log("読み込まれた"); // ちゃんと読み込まれた
+
+    $('span').click(function () {
+        console.log("span押された");
+    });
+
+    $('.fa-solid').click(function () {
+        console.log("fa-solid押された");
+    });
+
+    $('.fa-bars').click(function () {
+        console.log("fa-bars押された");
+    });
+
+    $('.fa-2x').click(function () {
+        console.log("fa-2x押された");
+    });
+
+    $('.menu-icon').click(function () {
+        console.log("menu-icon押された");
+    });
+
+    $('.front').click(function () {
+        console.log("front押された");
+    });
 
     // $('.front').click(function () {
     //     console.log("押された");
