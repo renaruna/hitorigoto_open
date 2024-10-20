@@ -5,6 +5,8 @@ $(function () {
     var $nav = $('.navigator');
 
     $('.front').click(function () {
+        console.log("押された");
+
         $('.front').fadeToggle(250);//250ミリ秒で非表示
         $('.back').fadeToggle(250);//250ミリ秒で表示
 
