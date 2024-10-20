@@ -26,7 +26,7 @@ $(function () {
         console.log("menu-icon押された");
     });
 
-    $('.front').click(function () {
+    $('#front').click(function () {
         console.log("front押された");
     });
 

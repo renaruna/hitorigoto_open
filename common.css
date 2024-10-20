@@ -47,11 +47,11 @@ header {
     z-index: 25;
 }
 
-.front {
+#front {
     color: #666;
 }
 
-.back {
+#back {
     display: none;
     color: #fffff0;
 }
