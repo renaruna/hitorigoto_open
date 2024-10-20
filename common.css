@@ -36,23 +36,30 @@ header {
     width: auto;
 }
 
-/* メニュー */
+/* ハンバーガーメニュー 
+    参考：https://rilaks.jp/blog/hamburgermenu-jquery/
+*/
 .hamburger-menu {
     width: 50px;
     height: 50px;
-    position: relative;
+    position: fixed;
+    right: 10px;
+    padding: 0;
+
     border: none;
     background: transparent;
+    /* ボタンの見た目消す */
     appearance: none;
-    padding: 0;
+
     cursor: pointer;
 }
 
 .hamburger-menu_bar {
+    /* ハンバーガーメニューアイコンの横一本 */
     display: inline-block;
     width: 44%;
     height: 2px;
-    background: #242424;
+    background: #353535;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -60,22 +67,27 @@ header {
 }
 
 .hamburger-menu_bar:first-child {
+    /* 一番上の横線 */
     top: 16px;
 }
 
 .hamburger-menu_bar:nth-child(2) {
+    /* 二本目の横線 */
     top: 24px;
 }
 
 .hamburger-menu_bar:last-child {
+    /* 一番下の横線 */
     top: 32px;
 }
 
+/* hamburger-menu--open：ナビゲーション開けてるときのアイコン作成 */
 .hamburger-menu--open .hamburger-menu_bar {
     top: 50%;
 }
 
 .hamburger-menu--open .hamburger-menu_bar:first-child {
+
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
@@ -89,11 +101,11 @@ header {
 
 .navigation {
     display: none;
-    background: #242424;
+    background: #fffaf7;
     position: absolute;
     top: 50px;
     width: 100%;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .navigation_list {
@@ -104,26 +116,24 @@ header {
 }
 
 .navigation_list-item {
-    border-bottom: solid 1px #474747;
+    border-bottom: solid 2px #f0e0d2;
 }
 
 .navigation_list-item:first-child {
-    border-top: solid 1px #474747;
+    border-top: solid 2px #f0e0d2;
 }
 
 .navigation_link {
-    color: #fff;
+    color: #000;
     font-weight: 700;
     text-decoration: none;
     display: block;
     padding: 24px 0;
-    transition: .5s;
+    transition: .3s;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .navigation_link:hover {
-        background: #333;
-    }
+.navigation_link:hover {
+    background: #f0e0d2;
 }
 
 /*--- 共通コンテンツ ---*/

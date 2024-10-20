@@ -1,10 +1,18 @@
 $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
-    /* menuボタン押して、ナビゲーション開閉 */
+    /* ナビゲーション開閉 */
     $('#header').on("click", '#js-hamburger-menu, .navigation__link', function () {
-        $('.navigation').slideToggle(500)
-        $('.hamburger-menu').toggleClass('hamburger-menu--open')
+        /*  後から追加する要素は反映まで時間かかるから
+            元からある要素（documentとか）をセレクタに指定しといてイベント設置すると動くらしい */
+
+        //ハンバーガーメニューアイコン押すか、ナビゲーションのうちのどれか押されたとき、
+
+        //ナビ画面が表示されていたらslide upで非表示、非表示されていたらslide downで表示される
+        $('.navigation').slideToggle(500);
+
+        //開いてるクラスがついてるときはremoveClass、クラスついてなかったらaddClass
+        $('.hamburger-menu').toggleClass('hamburger-menu--open');
     });
 
     /* ページ内リンクへスクロール */
