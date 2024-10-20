@@ -1,32 +1,11 @@
 $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
-    /* menuボタン押して、navigator全画面表示したり消えたり */
-    var $nav = $('.navigator');
-
-    //ハンバーガーメニュー押したら、navigator上から表示
-    $('#header').on("click", ".menu-open", function () {
-        //後から追加する要素は反映まで時間かかるから
-        //元からある要素（documentとか）をセレクタに指定しといて
-        //イベント設置すると動くらしい
-        console.log("menu-open押された");
-
-        $('.menu-open').fadeToggle(250);//250ミリ秒で非表示
-        $('.menu-close').fadeToggle(250);//250ミリ秒で表示
-
-        $nav.animate({ bottom: 0 }, 500);
+    /* menuボタン押して、ナビゲーション開閉 */
+    $('#header').on("click", '#js-hamburger-menu, .navigation__link', function () {
+        $('.navigation').slideToggle(500)
+        $('.hamburger-menu').toggleClass('hamburger-menu--open')
     });
-
-    //✕ボタン押したら、navigator上に戻って非表示
-    $('#header').on("click", ".menu-close", function () {
-        console.log("menu-close押された");
-
-        $('.menu-close').fadeToggle(250);//250ミリ秒で非表示
-        $('.menu-open').fadeToggle(250);//250ミリ秒で表示
-
-        $nav.animate({ bottom: "100%" }, 500);
-    });
-
 
     /* ページ内リンクへスクロール */
     $('a[href*="#"]').click(function () { //全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK。元は#page-link a[href*="#"]。
