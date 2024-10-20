@@ -38,18 +38,17 @@ header {
 
 /* メニュー */
 .menu-icon {
-    font-size: 30px;
     /* 透過 */
     background: rgba(0, 0, 0, 0);
 
     position: fixed;
-    top: 10px;
+    top: 5px;
     right: 20px;
     z-index: 25;
 }
 
 .front {
-    color: #888;
+    color: #666;
 }
 
 .back {
