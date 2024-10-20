@@ -1,24 +1,31 @@
 $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
-    /* menuボタン押して、navigator全画面表示 */
+    /* menuボタン押して、navigator全画面表示したり消えたり */
     var $nav = $('.navigator');
 
+    //ハンバーガーメニュー押したら、navigator上から表示
     $('#header').on("click", ".menu-open", function () {
         //後から追加する要素は反映まで時間かかるから
         //元からある要素（documentとか）をセレクタに指定しといて
         //イベント設置すると動くらしい
         console.log("menu-open押された");
+
+        $('.menu-open').fadeToggle(250);//250ミリ秒で非表示
+        $('.menu-close').fadeToggle(250);//250ミリ秒で表示
+
+        $nav.animate({ bottom: 0 }, 500);
     });
 
-    // $('.front').click(function () {
-    //     console.log("押された");
+    //✕ボタン押したら、navigator上に戻って非表示
+    $('#header').on("click", ".menu-close", function () {
+        console.log("menu-close押された");
 
-    //     $('.front').fadeToggle(250);//250ミリ秒で非表示
-    //     $('.back').fadeToggle(250);//250ミリ秒で表示
+        $('.menu-close').fadeToggle(250);//250ミリ秒で非表示
+        $('.menu-open').fadeToggle(250);//250ミリ秒で表示
 
-    //     $nav.animate({ bottom: 0 }, 500);
-    // });
+        $nav.animate({ bottom: "100%" }, 500);
+    });
 
 
     /* ページ内リンクへスクロール */
