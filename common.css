@@ -153,7 +153,7 @@ header {
     background: #f0e0d2;
 }
 
-/*--- 共通コンテンツ ---*/
+/*--- 共通コンテンツ（ページのタイトル） ---*/
 .top {
     max-width: 1000px;
     text-align: center;
@@ -171,7 +171,22 @@ header {
 }
 
 /*--- トップへ戻るボタン ---*/
+#page_top::before {
+    /* 上矢印みたいなアイコン部分 */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f106';
+    font-size: 40px;
+    color: #fff;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
 #page_top {
+    /* 背景の丸 */
     width: 60px;
     height: 60px;
     position: fixed;
@@ -181,21 +196,9 @@ header {
     background: #bbb;
     opacity: 0.5;
     border-radius: 50%;
-    transition: all 0.1s 0.05s linear;
     z-index: 1;
-}
 
-#page_top::before {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    content: '\f106';
-    font-size: 40px;
-
-    color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+    transition: all 0.1s 0.05s linear;
 }
 
 #page_top:hover {
