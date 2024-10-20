@@ -32,10 +32,10 @@ $(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 400) {
             // 画面を400pxスクロールしたら、800msかけてボタンを表示
-            topBtn.fadeTo(800, 0.5);
+            topBtn.show();
         } else {
             // 画面が400pxより上なら、800msかけてボタンをs非表示
-            topBtn.fadeOut(800);
+            topBtn.hide();
         }
     });
 
