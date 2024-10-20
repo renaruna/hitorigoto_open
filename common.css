@@ -7,6 +7,19 @@ a {
     text-decoration: none;
 }
 
+/*--- フォント ---*/
+.zen-kaku-gothic-new-regular {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.zen-kaku-gothic-new-medium {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
 /*--- ヘッダー ---*/
 header {
     height: 50px;
@@ -141,7 +154,7 @@ header {
     max-width: 1000px;
     text-align: center;
     margin: 20px auto;
-    padding-top: 30px;
+    padding-top: 35px;
     border-bottom: 5px #eee solid;
 }
 
