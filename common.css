@@ -171,12 +171,7 @@ header {
 }
 
 /*--- トップへ戻るボタン ---*/
-#page_top {
-    display: none;
-    transition: all 0.1s 0.05s linear;
-}
-
-.bottomer #page_top::before {
+#page_top::before {
     /* 上矢印みたいなアイコン部分 */
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
@@ -190,7 +185,7 @@ header {
     translate: -50% -50%;
 }
 
-.bottomer #page_top {
+#page_top {
     /* 背景の丸 */
     width: 60px;
     height: 60px;
@@ -199,14 +194,13 @@ header {
     bottom: 15px;
 
     background: #bbb;
-    opacity: 0.5;
     border-radius: 50%;
     z-index: 1;
 
-    display: inline-block;
+    transition: all 0.1s 0.05s linear;
 }
 
-.bottomer #page_top:hover {
+#page_top:hover {
     opacity: 1.0;
     background: #999;
 }

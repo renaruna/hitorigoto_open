@@ -26,15 +26,16 @@ $(function () {
 
     /* トップへ戻るボタン実装 */
     var topBtn = $('#page_top');
+    topBtn.hide();
 
     // ある程度スクロールしたら、ボタン表示する
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            // 画面を500pxスクロールしたら、800msかけてボタンを表示
-            topBtn.addClass('bottomer');
+        if ($(this).scrollTop() > 400) {
+            // 画面を400pxスクロールしたら、800msかけてボタンを表示
+            topBtn.fadeTo(800, 0.5);
         } else {
-            // 画面が500pxより上なら、800msかけてボタンをs非表示
-            topBtn.removeClass('bottomer');
+            // 画面が400pxより上なら、800msかけてボタンをs非表示
+            topBtn.fadeOut(800);
         }
     });
 
