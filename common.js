@@ -26,8 +26,8 @@ $(function () {
         console.log("menu-icon押された");
     });
 
-    $('#front').click(function () {
-        console.log("front押された");
+    $(document).on("click", ".menu-open", function () { // こう書くと後から追加する要素もイベント設置できるらしい
+        console.log("menu-open押された");
     });
 
     // $('.front').click(function () {

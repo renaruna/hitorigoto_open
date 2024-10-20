@@ -47,13 +47,13 @@ header {
     z-index: 25;
 }
 
-#front {
+.menu-open {
     color: #666;
 }
 
-#back {
+.menu-close {
     display: none;
-    color: #fffff0;
+    color: #666;
 }
 
 .navigator {
