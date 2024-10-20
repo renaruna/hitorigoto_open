@@ -177,6 +177,7 @@ header {
     position: fixed;
     right: 15px;
     bottom: 15px;
+
     background: #bbb;
     opacity: 0.5;
     border-radius: 50%;
@@ -185,10 +186,11 @@ header {
 }
 
 #page_top::before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     content: '\f106';
     font-size: 40px;
+
     color: #ffffff;
     position: absolute;
     top: 50%;
