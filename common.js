@@ -4,29 +4,10 @@ $(function () {
     /* menuボタン押して、navigator全画面表示 */
     var $nav = $('.navigator');
 
-    console.log("読み込まれた"); // ちゃんと読み込まれた
-
-    $('span').click(function () {
-        console.log("span押された");
-    });
-
-    $('.fa-solid').click(function () {
-        console.log("fa-solid押された");
-    });
-
-    $('.fa-bars').click(function () {
-        console.log("fa-bars押された");
-    });
-
-    $('.fa-2x').click(function () {
-        console.log("fa-2x押された");
-    });
-
-    $('.menu-icon').click(function () {
-        console.log("menu-icon押された");
-    });
-
-    $(document).on("click", ".menu-open", function () { // こう書くと後から追加する要素もイベント設置できるらしい
+    $('#header').on("click", ".menu-open", function () {
+        //後から追加する要素は反映まで時間かかるから
+        //元からある要素（documentとか）をセレクタに指定しといて
+        //イベント設置すると動くらしい
         console.log("menu-open押された");
     });
 
