@@ -31,10 +31,10 @@ $(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 500) {
             // 画面を500pxスクロールしたら、800msかけてボタンを表示
-            topBtn.addClass('.bottomer');
+            topBtn.addClass('bottomer');
         } else {
             // 画面が500pxより上なら、800msかけてボタンをs非表示
-            topBtn.removeClass('.bottomer');
+            topBtn.removeClass('bottomer');
         }
     });
 
