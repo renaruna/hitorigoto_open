@@ -5,9 +5,7 @@ p {
 
 .top {
     max-width: 800px;
-    text-align: center;
     margin: 30px auto;
-    border-bottom: 5px #eee solid;
 }
 
 .top h1 {
@@ -27,7 +25,7 @@ p {
     padding: 0 10px;
 }
 
-img {
+.slide img {
     width: 300px;
 }
 
@@ -36,7 +34,7 @@ img {
     padding: 0;
 }
 
-li {
+.slides li {
     padding: 0;
     text-align: center;
     list-style: none;
@@ -191,11 +189,11 @@ li {
         width: 250px;
     }
 
-    img {
+    .slide img {
         width: 200px;
     }
 
-    li {
+    .slides li {
         height: 200px;
     }
 
