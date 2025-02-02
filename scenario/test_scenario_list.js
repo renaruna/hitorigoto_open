@@ -25,8 +25,8 @@ fetch('https://script.google.com/macros/s/AKfycbzjCXoB0CWk9irqnG4hBaGSHA9EPDefmM
 
         for (let i = 0; i < data.length; i++) { // i=0のとき scenarioID=1
             let name = data[i].scenarioName;
-            let link = sArray[i].scenarioFilename;
-            let kasira = sArray[i].yomi;
+            let link = data[i].scenarioFilename;
+            let kasira = data[i].yomi;
 
             if (kasira.indexOf("あ") == 0 || kasira.indexOf("い") == 0 || kasira.indexOf("う") == 0 || kasira.indexOf("え") == 0 || kasira.indexOf("お") == 0) {
                 aHtml += '<li><a href="' + link + '">' + change(name, "#", ",") + '</a></li>';
