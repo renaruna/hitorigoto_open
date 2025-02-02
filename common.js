@@ -1,3 +1,5 @@
+/* アニメーションに関するjQuery */
+
 $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
@@ -18,8 +20,8 @@ $(function () {
     /* ページ内リンクへスクロール */
     $('a[href*="#"]').click(function () { //全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK。元は#page-link a[href*="#"]。
         var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-        var pos = $(elmHash).offset().top;	//idの上部の距離を取得
-        $('body,html').animate({ scrollTop: pos }, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+        var position = $(elmHash).offset().top;	//idの上部の距離を取得
+        $('body,html').animate({ scrollTop: (position + 50) }, 500); //取得した位置+ヘッダ50pxにスクロール。500msかけてスクロール
         return false;
     });
 
@@ -39,7 +41,8 @@ $(function () {
     });
 
     // ボタンをクリックしたら、スクロールして上に戻る
-    topBtn.click(function () {
+    topBtn.click(function (e) {
+        e.preventDefault(); // ページ内リンク飛んでhtml#になってる場合、#を無効化　参考：https://qiita.com/yuki153/items/c909c54204eaab6ca1b2
         $('body,html').animate({ scrollTop: 0 }, 500);
         return false;
     });
