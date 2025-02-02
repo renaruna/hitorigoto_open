@@ -18,10 +18,10 @@ $(function () {
     });
 
     /* ページ内リンクへスクロール */
-    $('a[href*="#"]').click(function () { //全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK。元は#page-link a[href*="#"]。
+    $('.page-link a[href ^= "#"]').click(function () { //class="page-link"のうち、href属性が"#"で始まるa要素を押した場合
         var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
         var position = $(elmHash).offset().top;	//idの上部の距離を取得
-        $('body,html').animate({ scrollTop: (position + 50) }, 500); //取得した位置+ヘッダ50pxにスクロール。500msかけてスクロール
+        $('body,html').animate({ scrollTop: (position - 50) }, 500); //取得した位置-ヘッダ50pxにスクロール。500msかけてスクロール
         return false;
     });
 
@@ -41,8 +41,7 @@ $(function () {
     });
 
     // ボタンをクリックしたら、スクロールして上に戻る
-    topBtn.click(function (e) {
-        e.preventDefault(); // ページ内リンク飛んでhtml#になってる場合、#を無効化　参考：https://qiita.com/yuki153/items/c909c54204eaab6ca1b2
+    topBtn.click(function () {
         $('body,html').animate({ scrollTop: 0 }, 500);
         return false;
     });
