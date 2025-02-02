@@ -6,10 +6,10 @@ fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlD
         let characterHtml = "";
         let existCharaNum = 0;
         for (let i = 0; i < data.length; i++) { // i=0のとき charaID=1
-            if (data[i].filename == "") {
+            if (data[i].charaFilename == "") {
                 continue;
             }
-            characterHtml += '<a href="' + data[i].filename + '">';
+            characterHtml += '<a href="' + data[i].charaFilename + '">';
             characterHtml += '<div class="charaImg">';
             characterHtml += '<img src="' + data[i].icon + '">';
             characterHtml += '<p>' + data[i].charaName + '</p>';
