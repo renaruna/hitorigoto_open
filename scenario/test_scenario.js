@@ -9,15 +9,24 @@ fetch('https://script.google.com/macros/s/AKfycbzjCXoB0CWk9irqnG4hBaGSHA9EPDefmM
         const scenarioURLElement = document.getElementById('scenarioURL');
         const sessionListElement = document.getElementById('session-list');
 
-        scenarioNameElement.textContent = data[0].scenarioName;
-        scenarioMakerElement.textContent = data[0].scenarioMaker;
-        scenarioURLElement.textContent = data[0].scenarioURL; //できたらURL有効にしたい
+        scenarioNameElement.textContent = data[0].scenarioName; //シナリオタイトル
+        scenarioMakerElement.textContent = data[0].scenarioMaker; //シナリオ作成者
 
-        const sessionSum = data[0].sessionSum; //セッション数の合計
+        //シナリオURL
+        const scenarioUrl = data[0].scenarioURL;
+        if (URL.canParse(scenarioUrl)) {
+            urlHtml = '<a target="_blank" rel="noopener noreferrer" href="' + scenarioUrl + '">' + scenarioUrl + '</a>';
+            scenarioURLElement.innerHTML = urlHtml;
+        } else {
+            scenarioURLElement.textContent = scenarioUrl;
+        }
 
+        //セッション数の合計
+        const sessionSum = data[0].sessionSum;
+        //セッション全部のHTML
         let sessionsHtml = '';
+        //1セッションずつHTML作成し、追加
         for (let i = 0; i < sessionSum; i++) {
-            //1セッションずつHTML作成し、追加
             sessionsHtml += await createSessionHtml(data[0], data[i + 1]);
         }
 
