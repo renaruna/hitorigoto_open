@@ -3,7 +3,7 @@ const MEMBER_JAP = ["運転手", "管理人", "上司", "スピリチュアル�
 
 fetch('https://script.google.com/macros/s/AKfycbzjCXoB0CWk9irqnG4hBaGSHA9EPDefmMzAx4mXrB9XoR0R78LQLUjXT_xSy1bpMcjahg/exec?scenarioID=' + scenarioID)
     .then(response => response.json())
-    .then(function (data) {
+    .then(async function (data) {
         const scenarioNameElement = document.getElementById('scenarioName');
         const scenarioMakerElement = document.getElementById('scenarioMaker');
         const scenarioURLElement = document.getElementById('scenarioURL');
@@ -18,7 +18,7 @@ fetch('https://script.google.com/macros/s/AKfycbzjCXoB0CWk9irqnG4hBaGSHA9EPDefmM
         let sessionsHtml = '';
         for (let i = 0; i < sessionSum; i++) {
             //1セッションずつHTML作成し、追加
-            sessionsHtml += createSessionHtml(data[0], data[i + 1]);
+            sessionsHtml += await createSessionHtml(data[0], data[i + 1]);
         }
 
         sessionListElement.innerHTML = sessionsHtml;
