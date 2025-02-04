@@ -88,8 +88,9 @@ function memberChara(onePCPL) { //メンバーのキャラリンク作る
             html += '<img src="' + charaData.icon + '">'; //アイコン画像リンク
             html += '<p>' + charaData.charaName + '</p>'; //キャラ名
             html += '</div></a>';
+            console.log(html);
         });
-    return onePCPL;
+    return html;
 }
 
 function change(text, a, b) {
