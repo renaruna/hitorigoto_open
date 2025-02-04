@@ -64,7 +64,15 @@ function createSessionHtml(scenarioData, sessionData) {
             pcHtml += '<p class="pl">PL:' + onePCPL.pl + '</p></div>';
         } else {
             //plがメンバーの場合
-            pcHtml += memberChara(onePCPL);
+            const memberCharaData = memberChara(onePCPL);
+            //メンバーの場合、plには英名、pcにはcharaIDが入っている
+            const charaData = memberCharaData[onePCPL.pc];
+            console.log(charaData);
+            pcHtml += '<a href="../member/' + onePCPL.pl + '/' + charaData.charaFilename + '">'; //キャラクターページへのリンク
+            pcHtml += '<div class="charaImg"><img src="' + charaData.icon + '">'; //アイコン画像リンク
+            pcHtml += '<p>' + charaData.charaName + '</p>'; //キャラ名
+            pcHtml += '</div></a>';
+            console.log(pcHtml);
             pcHtml += '<p class="pl">PL:' + MEMBER_JAP[memberId] + '</p></div>';
         }
     }
@@ -76,21 +84,8 @@ function createSessionHtml(scenarioData, sessionData) {
 }
 
 async function memberChara(onePCPL) { //メンバーのキャラリンク作る
-    let html = '';
     const response = await fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + onePCPL.pl);
-    const memberCharaData = response.json();
-
-    //メンバーの場合、plには英名、pcにはcharaIDが入っている
-    const charaData = memberCharaData[onePCPL.pc];
-
-    html += '<a href="../member/' + onePCPL.pl + '/' + charaData.charaFilename + '">'; //キャラクターページへのリンク
-    html += '<div class="charaImg">';
-    html += '<img src="' + charaData.icon + '">'; //アイコン画像リンク
-    html += '<p>' + charaData.charaName + '</p>'; //キャラ名
-    html += '</div></a>';
-    console.log(html);
-
-    return html;
+    return response.json();
 }
 
 function change(text, a, b) {
