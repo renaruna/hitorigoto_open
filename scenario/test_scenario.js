@@ -90,7 +90,7 @@ function memberChara(onePCPL) { //メンバーのキャラリンク作る
             html += '<p>' + charaData.charaName + '</p>'; //キャラ名
             html += '</div></a>';
 
-            return html;
+            return charaData;
         });
 }
 
