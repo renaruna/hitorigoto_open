@@ -95,12 +95,3 @@ async function createSessionHtml(scenarioData, sessionData) {
 
     return html;
 }
-
-function change(text, a, b) {
-    let i = 0;
-    let length = text.length;
-    for (i = 0; i < length; i++) {
-        text = text.replace(a, b);
-    }
-    return text;
-}
