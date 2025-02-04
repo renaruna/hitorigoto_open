@@ -59,21 +59,24 @@ async function createSessionHtml(scenarioData, sessionData) {
         const memberId = MEMBER_ENG.indexOf(onePCPL.pl);
         if (memberId < 0) {
             //plがメンバーでない場合
+            //PC情報
             pcHtml += '<a><div class="charaImg"><img>';
             pcHtml += '<p>' + onePCPL.pc + '</p></div></a>';
+            //PL情報
             pcHtml += '<p class="pl">PL:' + onePCPL.pl + '</p></div>';
         } else {
             //plがメンバーの場合
-            const memberCharaData = await memberChara(onePCPL);
-            console.log(memberCharaData);
-            //メンバーの場合、plには英名、pcにはcharaIDが入っている
+            //plには英名、pcにはcharaIDが入っている
+            const response = await fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + onePCPL.pl);
+            const memberCharaData = await response.json();
             const charaData = memberCharaData[onePCPL.pc];
-            console.log(charaData);
+
+            //PC情報
             pcHtml += '<a href="../member/' + onePCPL.pl + '/' + charaData.charaFilename + '">'; //キャラクターページへのリンク
             pcHtml += '<div class="charaImg"><img src="' + charaData.icon + '">'; //アイコン画像リンク
             pcHtml += '<p>' + charaData.charaName + '</p>'; //キャラ名
             pcHtml += '</div></a>';
-            console.log(pcHtml);
+            //PL情報
             pcHtml += '<p class="pl">PL:' + MEMBER_JAP[memberId] + '</p></div>';
         }
     }
@@ -82,11 +85,6 @@ async function createSessionHtml(scenarioData, sessionData) {
     html += topHtml + kpHtml + pcHtml + '</div>';
 
     return html;
-}
-
-async function memberChara(onePCPL) { //メンバーのキャラリンク作る
-    const response = await fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + onePCPL.pl);
-    return await response.json();
 }
 
 function change(text, a, b) {
