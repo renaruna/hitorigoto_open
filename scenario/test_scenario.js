@@ -24,7 +24,7 @@ fetch('https://script.google.com/macros/s/AKfycbzjCXoB0CWk9irqnG4hBaGSHA9EPDefmM
         sessionListElement.innerHTML = sessionsHtml;
     });
 
-function createSessionHtml(scenarioData, sessionData) {
+async function createSessionHtml(scenarioData, sessionData) {
     let html = '<div class="detail">'
 
     //セッション日と時間
@@ -64,7 +64,7 @@ function createSessionHtml(scenarioData, sessionData) {
             pcHtml += '<p class="pl">PL:' + onePCPL.pl + '</p></div>';
         } else {
             //plがメンバーの場合
-            const memberCharaData = memberChara(onePCPL);
+            const memberCharaData = await memberChara(onePCPL);
             console.log(memberCharaData);
             //メンバーの場合、plには英名、pcにはcharaIDが入っている
             const charaData = memberCharaData[onePCPL.pc];
