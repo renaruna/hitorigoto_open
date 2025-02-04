@@ -1,0 +1,55 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/*--- PCPL一覧 ---*/
+.pc-characters {
+    max-width: 95%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pc-character a {
+    padding: 5px 2px;
+    margin: 0 auto;
+}
+
+.pc-character img {
+    transition: all 0.2s 0.05s linear;
+}
+
+.pc-character a:hover img {
+    transform: scale(1.2);
+}
+
+.charaImg {
+    width: 120px;
+    height: 140px;
+    text-align: center;
+
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 2px 2px 3px #eee;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.charaImg img {
+    height: 120px;
+}
+
+.charaImg p {
+    margin: 0;
+    padding: 5px;
+    width: 110px;
+
+    position: absolute;
+    top: 110px;
+
+    background-color: #eee;
+}
