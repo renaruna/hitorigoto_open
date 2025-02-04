@@ -76,20 +76,22 @@ function createSessionHtml(scenarioData, sessionData) {
 }
 
 function memberChara(onePCPL) { //メンバーのキャラリンク作る
-    let html = '';
     fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + onePCPL.pl)
         .then(response => response.json())
         .then(function (memberCharaData) {
             //メンバーの場合、plには英名、pcにはcharaIDが入っている
             const charaData = memberCharaData[onePCPL.pc];
 
+            let html = '';
+
             html += '<a href="../member/' + onePCPL.pl + '/' + charaData.charaFilename + '">'; //キャラクターページへのリンク
             html += '<div class="charaImg">';
             html += '<img src="' + charaData.icon + '">'; //アイコン画像リンク
             html += '<p>' + charaData.charaName + '</p>'; //キャラ名
             html += '</div></a>';
+
+            return html;
         });
-    return html;
 }
 
 function change(text, a, b) {
