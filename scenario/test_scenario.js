@@ -86,7 +86,7 @@ function createSessionHtml(scenarioData, sessionData) {
 
 async function memberChara(onePCPL) { //メンバーのキャラリンク作る
     const response = await fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + onePCPL.pl);
-    return response.json();
+    return await response.json();
 }
 
 function change(text, a, b) {
