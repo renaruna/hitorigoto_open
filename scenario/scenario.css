@@ -45,6 +45,14 @@ h2 {
     border-collapse: collapse;
 }
 
+.session-top table th,td{
+    border-right: solid 2px white;
+}
+
+.session-top table th:last-child,td:last-child{
+    border-right: none;
+}
+
 .session-top table tr {
     border-bottom: solid 2px white;
 }
@@ -89,16 +97,15 @@ h3 {
 
 .pc-character {
     padding: 0 5px;
+    text-align: center;
 }
 
 .pc-character p {
     margin: 0;
-    text-align: center;
 }
 
 .pc-character a {
     padding: 5px 2px;
-    margin: 0 auto;
     display: inline-block;
 }
 
