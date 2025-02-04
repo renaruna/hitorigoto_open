@@ -65,6 +65,7 @@ function createSessionHtml(scenarioData, sessionData) {
         } else {
             //plがメンバーの場合
             const memberCharaData = memberChara(onePCPL);
+            console.log(memberCharaData);
             //メンバーの場合、plには英名、pcにはcharaIDが入っている
             const charaData = memberCharaData[onePCPL.pc];
             console.log(charaData);
