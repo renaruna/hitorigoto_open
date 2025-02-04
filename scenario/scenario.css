@@ -3,6 +3,10 @@ a {
     text-decoration: underline dotted;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 /*--- シナリオ情報（シナリオ作成者、シナリオページ） ---*/
 h2 {
     font-size: 18px;
@@ -45,11 +49,13 @@ h2 {
     border-collapse: collapse;
 }
 
-.session-top table th,td{
+.session-top table th,
+td {
     border-right: solid 2px white;
 }
 
-.session-top table th:last-child,td:last-child{
+.session-top table th:last-child,
+td:last-child {
     border-right: none;
 }
 
