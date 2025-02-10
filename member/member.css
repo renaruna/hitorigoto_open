@@ -140,3 +140,22 @@ a {
 
     background-color: #eee;
 }
+
+/*--- 参加シナリオ一覧 ---*/
+#member-kp {
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+#member-pl {
+    padding-left: 30px;
+}
+
+#member-pl p {
+    margin: 0;
+}
+
+#member-kp a:hover,
+#member-pl a:hover {
+    text-decoration: underline;
+}
