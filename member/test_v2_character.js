@@ -2,7 +2,12 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
     + '?member=manager&charaID=' + charaID + '&scenarioID=off')
     .then(response => response.json())
     .then(function (data) {
+        //タイトル
         document.title = data.charaName + '/独り言卓INDEX';
+
+        //パンくずリストの現在地
+        const hereElement = document.getElementById('here');
+        hereElement.textContent = data.charaName;
 
         const charaNameElement = document.getElementById('charaName');
         const hiranameElement = document.getElementById('hiraname');
