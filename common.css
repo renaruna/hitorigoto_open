@@ -104,7 +104,6 @@ header {
 }
 
 .hamburger-menu--open .hamburger-menu_bar:first-child {
-
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
@@ -151,6 +150,45 @@ header {
 
 .navigation_link:hover {
     background: #f0e0d2;
+}
+
+/* パンくずリスト */
+.breadcrumbs {
+    margin: 0;
+
+    list-style: none;
+
+    position: fixed;
+    top: 12px;
+    left: 50px;
+    z-index: 20;
+}
+
+.breadcrumbs li {
+    display: inline;
+    list-style: none;
+}
+
+.breadcrumbs li a {
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+    background: #f5ece3;
+
+    text-decoration: none;
+    transition: .3s;
+}
+
+.breadcrumbs li a:hover {
+    background: #f0e0d2;
+}
+
+.breadcrumbs li:after {
+    content: '>';
+    padding: 0 0.5em;
+}
+
+.breadcrumbs li:last-child:after {
+    content: '';
 }
 
 /*--- 共通コンテンツ（ページのタイトル） ---*/
