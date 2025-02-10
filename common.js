@@ -4,11 +4,10 @@ $(function () {
     var userAgent = navigator.userAgent; // ユーザーエージェント判定
 
     /* ナビゲーション開閉 */
-    $('#header').on("click", '#js-hamburger-menu, .navigation__link', function () {
+    //ハンバーガーメニューアイコン押すか、ナビゲーションそのものか、暗くなった背景カバーのうちのどれか押されたとき、
+    $('#header').on("click", '#js-hamburger-menu, .navigation__link, .navigation-cover', function () {
         /*  後から追加する要素は反映まで時間かかるから
             元からある要素（documentとか）をセレクタに指定しといてイベント設置すると動くらしい */
-
-        //ハンバーガーメニューアイコン押すか、ナビゲーションのうちのどれか押されたとき、
 
         //ナビ画面が表示されていたらslide upで非表示、非表示されていたらslide downで表示される
         $('.navigation').slideToggle(500);
@@ -17,6 +16,7 @@ $(function () {
         $('.hamburger-menu').toggleClass('hamburger-menu--open');
     });
 
+
     /* ページ内リンクへスクロール */
     $('.page-link a[href ^= "#"]').click(function () { //class="page-link"のうち、href属性が"#"で始まるa要素を押した場合
         var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
@@ -24,6 +24,7 @@ $(function () {
         $('body,html').animate({ scrollTop: (position - 50) }, 500); //取得した位置-ヘッダ50pxにスクロール。500msかけてスクロール
         return false;
     });
+
 
     /* トップへ戻るボタン実装 */
     var topBtn = $('#page_top');
