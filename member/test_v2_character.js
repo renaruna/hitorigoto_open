@@ -39,9 +39,10 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         let sessionListHtml = '';
         for (let i = 0; i < data.sessionNum; i++) {
             sessionListHtml += '<a href = "' + lists[i].scenarioFilename + '">'
-                + lists[i].scenarioName + lists[i].hoSentence + '</a>';
+                + lists[i].scenarioName + lists[i].hoSentence + '</a><br>';
         }
-        scenarioListElement.innerHTML = sessionListHtml;
+        //最後の改行文字を消して埋め込み
+        scenarioListElement.innerHTML = sessionListHtml.slice(0, -4);
 
         charaLinkElement.setAttribute("href", data.charaLink);
         charaLinkElement.textContent = data.charaLink;
