@@ -96,7 +96,6 @@ h3 {
 
 /*--- PCPL ---*/
 .pc-characters {
-    max-width: 95%;
     margin: 0 auto;
 
     display: flex;
