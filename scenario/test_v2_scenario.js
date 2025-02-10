@@ -4,12 +4,13 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
     .then(function (data) {
         document.title = data.scenario.scenarioName + '/独り言卓INDEX';
 
+        const genreElement = document.getElementById('genre');
         const scenarioNameElement = document.getElementById('scenarioName');
         const scenarioMakerElement = document.getElementById('scenarioMaker');
-        //genre
         const scenarioURLElement = document.getElementById('scenarioURL');
         const sessionListElement = document.getElementById('session-list');
 
+        genreElement.textContent = data.scenario.genre; //シナリオジャンル
         scenarioNameElement.textContent = data.scenario.scenarioName; //シナリオタイトル
         scenarioMakerElement.textContent = data.scenario.scenarioMaker; //シナリオ作成者
 
@@ -42,8 +43,15 @@ function createSessionHtml(scenarioData, sessionData) {
     topHtml += '<tr><td><p class="date">' + sessionData.date + '</p></td><td><p class="time">' + sessionData.time + '</p></td></tr></table></div>';
 
     //KP
-    //genreによってKPかGMか分ける
-    let kpHtml = '<div class="session-kp"><h3>KP</h3><p class="kp">' + sessionData.kp + '</p></div>';
+    //ジャンルによってKPとかGMとか分ける
+    let kpHtml = '';
+    if (scenarioData.genre == "クトゥルフ神話TRPG") {
+        kpHtml += '<div class="session-kp"><h3>KP</h3><p class="kp">' + sessionData.kp + '</p></div>';
+    } else if (scenarioData.genre == "エモクロアTRPG") {
+        kpHtml += '<div class="session-kp"><h3>DL</h3><p class="kp">' + sessionData.kp + '</p></div>';
+    } else {
+        kpHtml += '<div class="session-kp"><h3>GM</h3><p class="kp">' + sessionData.kp + '</p></div>';
+    }
 
     //PC：HOとPCとPL
     let pcHtml = '<div class="session-pc"><h3>PC</h3><div class="pc-characters">';
