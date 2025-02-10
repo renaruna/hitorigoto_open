@@ -152,6 +152,18 @@ header {
     background: #f0e0d2;
 }
 
+/* コンテンツカバー（.hamburger-menu--openと.navigation-coverが並んでいるとき背景暗くする） */
+.hamburger-menu--open ~ .navigation-cover{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 50px;
+	left: 0;
+
+	background: rgba(3,3,3,.2);
+	display: block;
+}
+
 /* パンくずリスト */
 .breadcrumbs {
     margin: 0;
