@@ -2,7 +2,12 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
     + '?member=off&charaID=off&scenarioID=' + scenarioID)
     .then(response => response.json())
     .then(function (data) {
+        //タイトル
         document.title = data.scenario.scenarioName + '/独り言卓INDEX';
+
+        //パンくずリストの現在地
+        const hereElement = document.getElementById('here');
+        hereElement.textContent = data.scenario.scenarioName;
 
         const genreElement = document.getElementById('genre');
         const scenarioNameElement = document.getElementById('scenarioName');
