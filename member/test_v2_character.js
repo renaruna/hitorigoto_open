@@ -43,7 +43,7 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         const lists = data.scenarioList;
         let sessionListHtml = '';
         for (let i = 0; i < data.sessionNum; i++) {
-            sessionListHtml += '<a href = "' + lists[i].scenarioFilename + '">'
+            sessionListHtml += '<a href = "../../scenario/' + lists[i].scenarioFilename + '">'
                 + lists[i].scenarioName + lists[i].hoSentence + '</a><br>';
         }
         //最後の改行文字を消して埋め込み
