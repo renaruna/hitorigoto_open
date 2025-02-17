@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページ検索避けと画像検索避け(noimageindex) そもそもgithub pagesは検索エンジンに上らない(?)みたいだけど -->
+    <meta name="robots" content="noindex,noarchive,nofollow,noimageindex">
+
+    <title>シナリオ一覧/独り言卓INDEX</title>
+
+    <!-- favicon系 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="icon" type="image/png" href="../img/android-chrome-256x256.png">
+
+    <!-- font awesome（アイコン） -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet">
+    <!-- google font（フォント）-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="scenario_list.css">
+
+    <!-- jquery読み込み -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- トップへ戻るボタン -->
+    <a href="#" id="page_top"></a>
+
+    <div id="header"></div>
+
+    <!-- パンくずリスト -->
+    <nav>
+        <ol class="breadcrumbs">
+            <li><a href="../home.html">独り言卓ホーム</a></li>
+            <li id="here">シナリオ一覧</li>
+        </ol>
+    </nav>
+
+    <div class="top">
+        <h1 class="title">シナリオ一覧</h1>
+    </div>
+
+    <div class="scenario-lists">
+        <div class="kasira-btn page-link">
+            <a href="#a" class="btn">
+                <p>あ</p>
+            </a>
+            <a href="#k" class="btn">
+                <p>か</p>
+            </a>
+            <a href="#s" class="btn">
+                <p>さ</p>
+            </a>
+            <a href="#t" class="btn">
+                <p>た</p>
+            </a>
+            <a href="#n" class="btn">
+                <p>な</p>
+            </a>
+            <a href="#h" class="btn">
+                <p>は</p>
+            </a>
+            <a href="#m" class="btn">
+                <p>ま</p>
+            </a>
+            <a href="#y" class="btn">
+                <p>や</p>
+            </a>
+            <a href="#r" class="btn">
+                <p>ら</p>
+            </a>
+            <a href="#w" class="btn">
+                <p>わ</p>
+            </a>
+            <p class="attention">※頭文字1文字のみの並び替え。濁点や半濁点は除いている。</p>
+        </div>
+
+        <div class="kasira-lists">
+            <div class="kasira-list">
+                <h3 id="a">あ</h3>
+                <div id="a-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="k">か</h3>
+                <div id="k-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="s">さ</h3>
+                <div id="s-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="t">た</h3>
+                <div id="t-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="n">な</h3>
+                <div id="n-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="h">は</h3>
+                <div id="h-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="m">ま</h3>
+                <div id="m-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="y">や</h3>
+                <div id="y-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="r">ら</h3>
+                <div id="r-list"></div>
+            </div>
+            <div class="kasira-list">
+                <h3 id="w">わ</h3>
+                <div id="w-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        //ヘッダーとフッターの読み込み
+        $(function () {
+            $("#header").load("../header.html");
+            $("#footer").load("../footer.html");
+        });
+    </script>
+
+    <script type="text/javascript" src="../common.js"></script>
+    <script type="text/javascript" src="test_v2_scenario_list.js"></script>
+</body>
+
+</html>
