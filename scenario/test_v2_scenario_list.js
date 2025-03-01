@@ -1,5 +1,5 @@
 fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG4RI7XYIzyHh4UW_joqJTGSp5fQqENEzjCq/exec'
-    + '?member=off&charaID=off&scenarioID=all')
+    + '?tool=scenario_list')
     .then(response => response.json())
     .then(function (data) {
         const aElement = document.getElementById('a-list');

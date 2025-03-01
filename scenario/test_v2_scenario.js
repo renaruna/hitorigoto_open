@@ -1,5 +1,5 @@
 fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG4RI7XYIzyHh4UW_joqJTGSp5fQqENEzjCq/exec'
-    + '?member=off&charaID=off&scenarioID=' + scenarioID)
+    + '?tool=scenario&scenarioID=' + scenarioID)
     .then(response => response.json())
     .then(function (data) {
         //タイトル
