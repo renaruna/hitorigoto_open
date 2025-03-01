@@ -73,19 +73,43 @@
             <p id="manager-color">ピンク</p>
         </div>
 
-        <div class="member-content">
-            <h2>PC一覧</h2>
-            <div id="member-character" class="member-character"></div>
+        <div class="member-content member-record">
+            <details class="accordion pc-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h2>キャラクター一覧</h2>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="member-character" class="member-character"></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
         </div>
 
-        <div class="member-content">
+        <div class="member-content member-record">
             <h2>参加したシナリオ</h2>
 
-            <h3>GMとして</h3>
-            <div id="member-kp"></div>
+            <details class="accordion role-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3>GMとして</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="member-kp"></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
 
-            <h3>PLとして</h3>
-            <div id="member-pl"></div>
+            <details class="accordion role-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3>PLとして</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="member-pl"></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
         </div>
 
     </div>

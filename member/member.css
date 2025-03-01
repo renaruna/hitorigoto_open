@@ -22,8 +22,8 @@ a {
 
 .member-content h3 {
     font-size: 17px;
-    margin: 10px 0;
-    padding-left: 10px;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
 }
 
 /*--- メンバー紹介 ---*/
@@ -90,7 +90,66 @@ a {
     background-color: pink;
 }
 
+/*--- 「キャラクター一覧」「参加したシナリオ」のところ ---*/
+.member-record h2 {
+    padding: 10px;
+    border: 2px solid #ccc;
+}
+
+/*--- アコーディオン共通 ---*/
+.accordion-title {
+    position: relative;
+    display: block;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .accordion-mark {
+        position: absolute;
+        top: 27%;
+        right: 3%;
+        transition-duration: 0.2s;
+    }
+
+    &.is-active {
+        .accordion-mark {
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-content {
+    padding: 5px;
+
+    .close-btn {
+        display: block;
+        margin: 5px auto;
+        padding: 5px 20px;
+        background-color: transparent;
+        color: #555;
+        border: none;
+
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
 /*--- キャラクター一覧 ---*/
+.pc-list .accordion-content {
+    background-color: #f8f8f8;
+}
+
 .member-character {
     max-width: 95%;
     margin: 0 auto;
@@ -120,6 +179,7 @@ a {
     border: 2px solid #ccc;
     border-radius: 2px;
     box-shadow: 2px 2px 3px #eee;
+    background-color: white;
 
     position: relative;
 
@@ -142,13 +202,21 @@ a {
 }
 
 /*--- 参加シナリオ一覧 ---*/
+.role-list .accordion-title {
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.role-list .accordion-content {
+    border: 2px solid #eee;
+}
+
 #member-kp {
-    padding-left: 30px;
-    padding-bottom: 10px;
+    padding: 10px 20px;
 }
 
 #member-pl {
-    padding-left: 30px;
+    padding: 10px 20px;
 }
 
 #member-pl p {
