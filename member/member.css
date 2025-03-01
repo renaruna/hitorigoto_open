@@ -211,6 +211,11 @@ a {
     border: 2px solid #eee;
 }
 
+#member-kp a:hover,
+#member-pl a:hover {
+    text-decoration: underline;
+}
+
 #member-kp {
     padding: 10px 20px;
 }
@@ -219,11 +224,30 @@ a {
     padding: 10px 20px;
 }
 
-#member-pl p {
-    margin: 0;
+#member-pl table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-#member-kp a:hover,
-#member-pl a:hover {
-    text-decoration: underline;
+#member-pl td:first-child {
+    position: relative;
+    text-align: left;
+    width: 50%;
+    min-width: 8em;
+    padding: 2px 10px 0 0;
+}
+
+#member-pl td:first-child::after {
+    content: '';
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 70%;
+}
+
+#member-pl td:last-child {
+    padding: 2px 0 0 10px;
 }

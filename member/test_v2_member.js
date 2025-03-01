@@ -43,11 +43,11 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         let plHtml = '<table>';
         for (let i = 0; i < plArray.length; i++) {
             //シナリオ
-            plHtml += '<tr><td><p><a href="../../scenario/' + plArray[i].scenarioFilename + '">'
-                + plArray[i].scenarioName + '</a></p></td>';
+            plHtml += '<tr><td><a href="../../scenario/' + plArray[i].scenarioFilename + '">'
+                + plArray[i].scenarioName + '</a></td>';
             //【HO】キャラ
-            plHtml += '<td><p><a href="' + plArray[i].charaFilename + '">'
-                + plArray[i].hoSentence + plArray[i].charaName + '</a></p></td></tr>';
+            plHtml += '<td><a href="' + plArray[i].charaFilename + '">'
+                + plArray[i].hoSentence + plArray[i].charaName + '</a></td></tr>';
         }
         plElement.innerHTML = plHtml + '</table>';
 
