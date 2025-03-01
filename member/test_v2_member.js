@@ -40,17 +40,15 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         kpElement.innerHTML = kpHtml.slice(0, -4);
 
         //PL一覧
-        let plHtml = '';
+        let plHtml = '<table>';
         for (let i = 0; i < plArray.length; i++) {
             //シナリオ
-            plHtml += '<p><a href="../../scenario/' + plArray[i].scenarioFilename + '">'
-                + plArray[i].scenarioName + '</a>';
-            //：【HO】
-            plHtml += '：' + plArray[i].hoSentence;
-            //キャラ
-            plHtml += '<a href="' + plArray[i].charaFilename + '">'
-                + plArray[i].charaName + '</a></p>';
+            plHtml += '<tr><td><p><a href="../../scenario/' + plArray[i].scenarioFilename + '">'
+                + plArray[i].scenarioName + '</a></p></td>';
+            //【HO】キャラ
+            plHtml += '<td><p><a href="' + plArray[i].charaFilename + '">'
+                + plArray[i].hoSentence + plArray[i].charaName + '</a></p></td></tr>';
         }
-        plElement.innerHTML = plHtml;
+        plElement.innerHTML = plHtml + '</table>';
 
     });
