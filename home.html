@@ -49,12 +49,12 @@
     </div>
 
     <div class="home-contents">
-        <div>
+        <div class="home-content">
             <h2>独り言卓メンバーが参加したシナリオ</h2>
             <p><a href="scenario/scenario_list.html">シナリオ一覧</a></p>
         </div>
 
-        <div>
+        <div class="home-content">
             <h2>独り言卓メンバー＆キャラクター</h2>
             <ul>
                 <li>
@@ -75,18 +75,45 @@
             </ul>
         </div>
 
-        <div>
-            <h2>サイトについて</h2>
-            <p>管理人（ひかる）が作っちゃったサイトだよ</p>
-            <p>あるTRPGプレイヤーたちの倉庫を目的としたサイトです。</p>
-            <p>サイトの構成は以下のようになっています。</p>
-            <p>運用の楽さを優先しているので、ページの表示が遅いです。寛大な心で表示を待っていただけると幸いです。</p>
-            <p>画像の無断利用はおやめください。</p>
+        <div class="home-content">
+            <details class="accordion site-description js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h2>このサイトについて</h2>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div class="description-content">
+                        <p>ここはあるTRPGプレイヤーたちの倉庫を目的としたサイトです。</p>
+                        <p>管理人は、管理人（ひかる）です。名前被ったのはたまたまです。まぁでも元を辿れば同じか。</p>
+                        <p>軽くサイトの構成を図にすると以下のようになっています。</p>
+                        <img href="img/サイト構成_2025-03-02.png">
+                        <p>運用の楽さを優先しているので、ページの表示が遅いです。寛大な心で表示を待っていただけると幸いです。</p>
+                        <p>また、画像の無断利用はおやめください。</p>
+                    </div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
         </div>
 
-        <div>
-            <h2>更新履歴</h2>
-            <p>2024/10/16 あいうえお</p>
+        <div class="home-content">
+            <details class="accordion update-history js-accordion">
+                <summary class="accordion-title history-list js-accordion-title">
+                    <h2>更新履歴</h2>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content history-content js-accordion-content">
+                    <details class="accordion history-detail js-accordion">
+                        <summary class="accordion-title js-accordion-title">
+                            <p>ver1.0.0 運用開始（2024/11/11）</p>
+                            <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <div class="accordion-content js-accordion-content">
+                            <p>ver1.0.1 ～～を改良（2022/22/22）</p>
+                        </div>
+                    </details>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
         </div>
 
     </div>

@@ -4,11 +4,8 @@
 }
 
 .home-contents h2 {
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-bottom: 10px;
+    margin: 30px 0 0 0;
     font-size: 1.2em;
-    margin: 0;
 }
 
 .home-contents p {
@@ -34,4 +31,74 @@
 
 .home-contents li {
     padding-bottom: 5px;
+}
+
+/*--- アコーディオン ---*/
+.accordion-title {
+    position: relative;
+    display: block;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .accordion-mark {
+        position: absolute;
+        top: 27%;
+        right: 3%;
+        transition-duration: 0.2s;
+    }
+
+    &.is-active {
+        .accordion-mark {
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-content {
+    padding: 5px;
+
+    .close-btn {
+        display: block;
+        margin: 5px auto;
+        padding: 5px 20px;
+        background-color: transparent;
+        color: #555;
+        border: none;
+
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.site-description h2,
+.update-history h2 {
+    padding: 10px;
+    border: 2px solid #ccc;
+}
+
+.history-content {
+    padding: 0;
+}
+
+.history-detail .accordion-title {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.history-detail .accordion-content {
+    padding-left: 30px;
+    border: 2px solid #eee;
 }
