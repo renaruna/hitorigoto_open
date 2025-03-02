@@ -102,3 +102,9 @@
     padding-left: 30px;
     border: 2px solid #eee;
 }
+
+/*--- このサイトについて ---*/
+.siteImg {
+    width: 60%;
+    padding-left: 40px;
+}
