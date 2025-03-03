@@ -145,7 +145,7 @@
 
 @media (prefers-reduced-motion:reduce) {
 
-    /* これは何でしょうね */
+    /* ユーザーのOSで視覚効果を減らす設定をしている場合に反映される */
     .fa-beat,
     .fa-beat-fade,
     .fa-bounce,
@@ -163,11 +163,13 @@
     }
 }
 
+/* 三本線 */
 .fa-bars:before,
 .fa-navicon:before {
     content: "\f0c9"
 }
 
+/* ✕マーク */
 .fa-close:before,
 .fa-multiply:before,
 .fa-remove:before,
@@ -176,14 +178,17 @@
     content: "\f00d"
 }
 
+/* ▼マーク */
 .fa-caret-down:before {
     content: "\f0d7"
 }
 
+/* ▲マーク */
 .fa-caret-up:before {
     content: "\f0d8"
 }
 
+/* 家マーク */
 .fa-home-alt:before,
 .fa-home-lg-alt:before,
 .fa-home:before,
@@ -191,8 +196,14 @@
     content: "\f015"
 }
 
+/* くるくる回る丸8点のやつ */
 .fa-spinner:before {
     content: "\f110"
+}
+
+/* くるくる回る線のやつ */
+.fa-circle-notch:before {
+    content: "\f1ce"
 }
 
 :host,
