@@ -96,55 +96,6 @@ a {
     border: 2px solid #ccc;
 }
 
-/*--- アコーディオン共通 ---*/
-.accordion-title {
-    position: relative;
-    display: block;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-    }
-
-    .accordion-mark {
-        position: absolute;
-        top: 27%;
-        right: 3%;
-        transition-duration: 0.2s;
-    }
-
-    &.is-active {
-        .accordion-mark {
-            -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-        }
-    }
-}
-
-.accordion-title::-webkit-details-marker {
-    display: none;
-}
-
-.accordion-content {
-    padding: 5px;
-
-    .close-btn {
-        display: block;
-        margin: 5px auto;
-        padding: 5px 20px;
-        background-color: transparent;
-        color: #555;
-        border: none;
-
-        text-align: center;
-        cursor: pointer;
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-}
-
 /*--- キャラクター一覧 ---*/
 .pc-list .accordion-content {
     background-color: #f8f8f8;

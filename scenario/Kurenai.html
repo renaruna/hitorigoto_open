@@ -17,6 +17,9 @@
 
     <!-- font awesome（アイコン） -->
     <link href="../fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css"
+        type="text/css" media="all" />
     <!-- google font（フォント）-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +53,11 @@
 
     <!-- シナリオ名 -->
     <div class="top">
-        <h1 class="title" id="scenarioName"></h1>
+        <h1 class="title" id="scenarioName">
+            <div id="loading">
+                <i class="fas fa-circle-notch faa-spin animated"></i>
+            </div>
+        </h1>
     </div>
 
     <!-- シナリオ情報 -->

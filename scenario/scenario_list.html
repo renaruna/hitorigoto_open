@@ -17,6 +17,9 @@
 
     <!-- font awesome（アイコン） -->
     <link href="../fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css"
+        type="text/css" media="all" />
     <!-- google font（フォント）-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,46 +88,106 @@
         </div>
 
         <div class="kasira-lists">
-            <div class="kasira-list">
-                <h3 id="a">あ</h3>
-                <div id="a-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="k">か</h3>
-                <div id="k-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="s">さ</h3>
-                <div id="s-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="t">た</h3>
-                <div id="t-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="n">な</h3>
-                <div id="n-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="h">は</h3>
-                <div id="h-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="m">ま</h3>
-                <div id="m-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="y">や</h3>
-                <div id="y-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="r">ら</h3>
-                <div id="r-list"></div>
-            </div>
-            <div class="kasira-list">
-                <h3 id="w">わ</h3>
-                <div id="w-list"></div>
-            </div>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="a">あ</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="a-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="k">か</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="k-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="s">さ</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="s-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="t">た</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="t-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="n">な</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="n-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="h">は</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="h-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="m">ま</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="m-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="y">や</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="y-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="r">ら</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="r-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
+            <details class="accordion kasira-list js-accordion">
+                <summary class="accordion-title js-accordion-title">
+                    <h3 id="w">わ</h3>
+                    <span class="accordion-mark"><i class="fa-solid fa-caret-down"></i></span>
+                </summary>
+                <div class="accordion-content js-accordion-content">
+                    <div id="w-list"><i class="fas fa-circle-notch faa-spin animated"></i></div>
+                    <button class="close-btn">×　閉じる</button>
+                </div>
+            </details>
         </div>
     </div>
 
