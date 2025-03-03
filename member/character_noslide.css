@@ -25,6 +25,7 @@ a:hover {
 #loading i {
     position: relative;
     top: 40%;
+    color: #ffe3d2;
 }
 
 .top {
