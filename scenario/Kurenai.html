@@ -5,44 +5,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ページ検索避けと画像検索避け(noimageindex) そもそもgithub pagesは検索エンジンに上らない(?)みたいだけど -->
+    
     <meta name="robots" content="noindex,noarchive,nofollow,noimageindex">
 
     <title>シナリオ/独り言卓INDEX</title>
 
-    <!-- favicon系 -->
+    
     <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
     <link rel="shortcut icon" href="../img/favicon.ico">
     <link rel="icon" type="image/png" href="../img/android-chrome-256x256.png">
 
-    <!-- font awesome（アイコン） -->
+    
     <link href="../fontawesome/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css"
         type="text/css" media="all" />
-    <!-- google font（フォント）-->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Zen&#43;Kaku&#43;Gothic&#43;New:wght@400;500;700&amp;display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="scenario.css">
 
-    <!-- jquery読み込み -->
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- トップへ戻るボタン -->
+    
     <a href="#" id="page_top"></a>
 
     <div id="header"></div>
 
-    <script>var scenarioID = 1;</script>
+    <script>
+      var scenarioID = '1';
+    </script>
 
-    <!-- パンくずリスト -->
+    
     <nav>
         <ol class="breadcrumbs">
             <li><a href="../home.html"><i class="fa-solid fa-house"></i> 独り言卓ホーム</a></li>
@@ -51,7 +53,7 @@
         </ol>
     </nav>
 
-    <!-- シナリオ名 -->
+    
     <div class="top">
         <h1 class="title" id="scenarioName">
             <div id="loading">
@@ -60,7 +62,7 @@
         </h1>
     </div>
 
-    <!-- シナリオ情報 -->
+    
     <div class="basic-info">
         <h2>ジャンル</h2>
         <p id="genre"></p>
@@ -72,73 +74,14 @@
         <p id="scenarioURL"></p>
     </div>
 
-    <!-- セッション情報 -->
+    
     <div class="sessions" id="session-list">
     </div>
-
-    <!--ここから直書き-->
-    <div class="detail">
-        <div class="session-top">
-            <table>
-                <tr>
-                    <th>セッション日</th>
-                    <th>セッション時間</th>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="date">2024/12/25</p>
-                    </td>
-                    <td>
-                        <p class="time">13時間4分</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="session-kp">
-            <h3>KP</h3>
-            <p class="kp">スピリチュアルな存在。</p>
-        </div>
-
-        <div class="session-pc">
-            <h3>PC</h3>
-
-            <!-- HO順 -->
-            <div class="pc-characters">
-
-                <!-- いちキャラクター（HO名、PC、PL） -->
-                <div class="pc-character">
-                    <p class="ho">HO1</p>
-                    <a href="../member/manager/Nefrit.html">
-                        <div class="charaImg">
-                            <img src="https://lh3.google.com/u/0/d/1hlNr5LqtkImS7Tz14QC5gQkg7ZMiU8Kj">
-                            <p>ニーフリット</p>
-                        </div>
-                    </a>
-                    <p class="pl">PL:管理人（ひかる）</p>
-                </div>
-
-                <div class="pc-character">
-                    <p class="ho">HO2</p>
-                    <a href="Tachibana_Hanako.html">
-                        <div class="charaImg">
-                            <img src="https://lh3.google.com/u/0/d/1mGb1R3KnMGLFhFaoQiFF64RnToeS_Fmq">
-                            <p>立花玻奈子</p>
-                        </div>
-                    </a>
-                    <p class="pl">PL:管理人（ひかる）</p>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-    <!--ここまで直書き-->
 
     <div id="footer"></div>
 
     <script>
-        //ヘッダーとフッターの読み込み
+        
         $(function () {
             $("#header").load("../header.html");
             $("#footer").load("../footer.html");
