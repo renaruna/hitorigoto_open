@@ -35,6 +35,10 @@ a {
     width: 100px;
 }
 
+.member-icon:is([src=""]) {
+    display: none;
+}
+
 .member-link {
     width: fit-content;
     margin: 10px auto;
@@ -57,8 +61,7 @@ a {
 }
 
 .member-link:empty {
-    padding: 0;
-    margin: 0;
+    display: none;
 }
 
 .comment {
@@ -74,9 +77,7 @@ a {
 }
 
 .comment:empty {
-    padding: 0;
-    margin: 0;
-    border: none;
+    display: none;
 }
 
 .member-color {
@@ -150,10 +151,6 @@ a {
 
 .charaImg img {
     height: 120px;
-}
-
-.charaImg img:empty {
-    background-image: url(https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp);
 }
 
 .charaImg p {

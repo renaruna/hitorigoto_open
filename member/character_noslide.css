@@ -34,10 +34,6 @@ a:hover {
     padding: 0 10px;
 }
 
-#icon:empty {
-    background-image: url(https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp);
-}
-
 .slide img {
     width: 300px;
 }
@@ -112,7 +108,7 @@ a:hover {
 }
 
 #introduction:empty {
-    padding: 0;
+    display: none;
 }
 
 .profile {
