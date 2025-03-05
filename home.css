@@ -56,6 +56,11 @@
 }
 
 /*--- このサイトについて ---*/
+
+.description-content p {
+    margin: 0.2em 0;
+}
+
 .siteImg {
     width: 60%;
     padding-left: 40px;
