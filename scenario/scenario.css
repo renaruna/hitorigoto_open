@@ -145,6 +145,10 @@ h3 {
     height: 120px;
 }
 
+.charaImg img:empty {
+    background-image: url(https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp);
+}
+
 .charaImg p {
     margin: 0;
     padding: 5px;

@@ -56,6 +56,11 @@ a {
     color: hotpink;
 }
 
+.member-link:empty {
+    padding: 0;
+    margin: 0;
+}
+
 .comment {
     max-width: 95%;
     width: fit-content;
@@ -66,6 +71,12 @@ a {
 
     border: 2px solid #ccc;
     border-radius: 2px;
+}
+
+.comment:empty {
+    padding: 0;
+    margin: 0;
+    border: none;
 }
 
 .member-color {
@@ -139,6 +150,10 @@ a {
 
 .charaImg img {
     height: 120px;
+}
+
+.charaImg img:empty {
+    background-image: url(https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp);
 }
 
 .charaImg p {
