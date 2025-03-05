@@ -16,7 +16,7 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         for (let i = 0; i < existCharaNum; i++) {
             characterHtml += '<a href="' + charaArray[i].charaFilename + '">';
             characterHtml += '<div class="charaImg">';
-            characterHtml += '<img src="' + charaArray[i].charaIcon + '">';
+            characterHtml += '<img src="' + setIcon(charaArray[i].charaIcon) + '">';
             characterHtml += '<p>' + charaArray[i].charaName + '</p>';
             characterHtml += '</div></a>';
         }
@@ -52,3 +52,11 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         plElement.innerHTML = plHtml + '</table>';
 
     });
+
+//アイコン項目が空のとき、no-image.webpを差し込む
+function setIcon(iconText) {
+    if (iconText == '') {
+        return 'https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp';
+    }
+    return iconText;
+}

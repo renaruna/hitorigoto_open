@@ -30,7 +30,7 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         //名前から自己紹介までSET
         charaNameElement.textContent = data.charaName;
         hiranameElement.textContent = data.hiraname;
-        iconElement.setAttribute("src", data.icon);
+        iconElement.setAttribute("src", setIcon(data.icon));
         iconMakerElement.textContent = data.iconMaker;
         introductionElement.innerHTML = change(data.introduction, "\n", "<br>");
 
@@ -81,6 +81,14 @@ function change(text, a, b) {
         text = text.replace(a, b);
     }
     return text;
+}
+
+//アイコン項目が空のとき、no-image.webpを差し込む
+function setIcon(iconText) {
+    if (iconText == '') {
+        return 'https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp';
+    }
+    return iconText;
 }
 
 function blackOrWhite(hexcolor) {
