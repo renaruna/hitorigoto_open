@@ -81,7 +81,7 @@ function createSessionHtml(scenarioData, sessionData) {
 
         //PC欄
         pcHtml += '<a href="../member/' + onePCPL.pcFilename + '">'; //キャラクターページへのリンク
-        pcHtml += '<div class="charaImg"><img src="' + onePCPL.pcIcon + '">'; //アイコン画像リンク
+        pcHtml += '<div class="charaImg"><img src="' + setIcon(onePCPL.pcIcon) + '">'; //アイコン画像リンク
         pcHtml += '<p>' + onePCPL.pcName + '</p>'; //キャラ名
         pcHtml += '</div></a>';
 
@@ -94,4 +94,12 @@ function createSessionHtml(scenarioData, sessionData) {
     html += topHtml + kpHtml + pcHtml + '</div>';
 
     return html;
+}
+
+//アイコン項目が空のとき、no-image.webpを差し込む
+function setIcon(iconText) {
+    if (iconText == '') {
+        return 'https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp';
+    }
+    return iconText;
 }
