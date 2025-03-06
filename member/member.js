@@ -1,39 +1,62 @@
-fetch('https://script.google.com/macros/s/AKfycbyjMTeRaNtT2HKEKkYdilkQg3RYP9JOlDJ8s27e7HK6NeRv67cwv03RLVyWRwDC-pN03A/exec?member=' + 'manager')
+fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG4RI7XYIzyHh4UW_joqJTGSp5fQqENEzjCq/exec'
+    + '?tool=member&member=' + member)
     .then(response => response.json())
     .then(function (data) {
+        const charaArray = data.chara;
+        const kpArray = data.kp;
+        const plArray = data.pl;
+
         const characterElement = document.getElementById('member-character');
+        const kpElement = document.getElementById('member-kp');
+        const plElement = document.getElementById('member-pl');
 
-        let characterHtml = "";
-        let existCharaNum = 0;
-        for (let i = 0; i < data.length; i++) { // i=0のとき charaID=1
-            if (data[i].charaFilename == "") {
-                continue;
-            }
-            characterHtml += '<a href="' + data[i].charaFilename + '">';
+        //キャラ一覧
+        let characterHtml = '';
+        let existCharaNum = charaArray.length;
+        for (let i = 0; i < existCharaNum; i++) {
+            characterHtml += '<a href="' + charaArray[i].charaFilename + '">';
             characterHtml += '<div class="charaImg">';
-            characterHtml += '<img src="' + data[i].icon + '">';
-            characterHtml += '<p>' + data[i].charaName + '</p>';
+            characterHtml += '<img src="' + setIcon(charaArray[i].charaIcon) + '">';
+            characterHtml += '<p>' + charaArray[i].charaName + '</p>';
             characterHtml += '</div></a>';
-
-            existCharaNum++;
         }
 
         // 探索者たちがflexで並べられている→最後の行のボックスたちを左寄せにしたい
         // →空白のボックスを用意する
         blankNum = 6 - (existCharaNum % 6);
         for (let i = 0; i < blankNum; i++) {
-            characterHtml += '<a style="width:123px;"></a>'
+            characterHtml += '<a style="width:123px;"></a>';
         }
 
         characterElement.innerHTML = characterHtml;
 
+        //KP一覧
+        let kpHtml = '';
+        for (let i = 0; i < kpArray.length; i++) {
+            kpHtml += '<a href="../../scenario/' + kpArray[i].scenarioFilename + '">'
+                + kpArray[i].scenarioName + '</a><br>';
+        }
+        //最後の改行文字を消して埋め込み
+        kpElement.innerHTML = kpHtml.slice(0, -4);
+
+        //PL一覧
+        let plHtml = '<table>';
+        for (let i = 0; i < plArray.length; i++) {
+            //シナリオ
+            plHtml += '<tr><td><a href="../../scenario/' + plArray[i].scenarioFilename + '">'
+                + plArray[i].scenarioName + '</a></td>';
+            //【HO】キャラ
+            plHtml += '<td><a href="' + plArray[i].charaFilename + '">'
+                + plArray[i].hoSentence + plArray[i].charaName + '</a></td></tr>';
+        }
+        plElement.innerHTML = plHtml + '</table>';
+
     });
 
-function change(text, a, b) {
-    let i = 0;
-    let length = text.length;
-    for (i = 0; i < length; i++) {
-        text = text.replace(a, b);
+//アイコン項目が空のとき、no-image.webpを差し込む
+function setIcon(iconText) {
+    if (iconText == '') {
+        return 'https://hikarutau.cloudfree.jp/Hitorigoto-Index/img/no-image.webp';
     }
-    return text;
+    return iconText;
 }
