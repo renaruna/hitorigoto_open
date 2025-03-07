@@ -219,21 +219,6 @@ a[href='']#charaLink {
 /*--- スマホ:(320px)360px～520px ---*/
 @media (max-width: 520px) {
 
-    .top {
-        margin: 20px 0 10px 0;
-    }
-
-    .top h1 {
-        font-size: 20px;
-    }
-
-    .top p {
-        font-size: 0.7em;
-        margin: 0;
-        padding-bottom: 5px;
-    }
-
-
     .basic-info {
         font-size: smaller;
     }
@@ -274,8 +259,6 @@ a[href='']#charaLink {
         border-bottom: 5px solid transparent;
     }
 
-    .detail h2 {}
-
     .profile {
         padding-top: 20px;
         margin: 5px auto;
@@ -284,7 +267,7 @@ a[href='']#charaLink {
     .detail {
         width: 80%;
         overflow-wrap: break-word;
-        margin: 25px auto;
+        margin: 20px auto;
     }
 
     .detail h2 {
