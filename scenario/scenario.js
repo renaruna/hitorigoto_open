@@ -21,6 +21,12 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
 
         //シナリオURL
         const scenarioUrl = setValue(data.scenario.scenarioURL);
+        console.log("data.scenario.scenarioURL:" + data.scenario.scenarioURL);
+        console.log("type:" + typeof(data.scenario.scenarioURL));
+        console.log("length:" + typeof(data.scenario.scenarioURL.length));
+        console.log("''?:" + (data.scenario.scenarioURL == ''));
+        console.log("scenarioUrl:" + scenarioUrl);
+        console.log("type:" + typeof(scenarioUrl));
         if (URL.canParse(scenarioUrl)) {
             urlHtml = '<a target="_blank" rel="noopener noreferrer" href="' + scenarioUrl + '">' + scenarioUrl + '</a>';
             scenarioURLElement.innerHTML = urlHtml;
