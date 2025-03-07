@@ -169,7 +169,7 @@ header {
 }
 
 .breadcrumbs li {
-    display: inline;
+    display: inline-block;
     list-style: none;
 }
 
@@ -195,6 +195,71 @@ header {
 
 .breadcrumbs li:last-child:after {
     content: '';
+}
+
+/*スマホ用表示（家アイコンだけ）を消す*/
+.phone-content a {
+    display: none;
+}
+
+.breadcrumbs .phone-content:after {
+    display: none;
+}
+
+/*16文字以上は省略*/
+#here {
+    max-width: 16em;
+    white-space: nowrap;
+    overflow: hidden;
+    /*3点リーダー*/
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+/* タブレット:520px～768px(960px) */
+@media (max-width: 768px) {
+    .breadcrumbs {
+        top: 7px;
+        left: 40px;
+        font-size: 0.8em;
+    }
+
+    #here {
+        position: absolute;
+        top: 22px;
+        left: 40px;
+        max-width: 28em;
+    }
+
+}
+
+/* スマホ:(320px)360px～520px */
+@media (max-width: 520px) {
+    .breadcrumbs {
+        top: 7px;
+        left: 30px;
+        font-size: 0.8em;
+    }
+
+    .phone-content a {
+        display: inline;
+    }
+
+    .breadcrumbs .phone-content:after {
+        display: inline;
+    }
+
+    .pc-content a {
+        display: none;
+    }
+
+    .breadcrumbs .pc-content:after {
+        display: none;
+    }
+
+    #here {
+        max-width: 15em;
+    }
 }
 
 /*--- ローディング ---*/
