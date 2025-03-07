@@ -102,17 +102,11 @@ function createSessionHtml(scenarioData, sessionData) {
 
 //空欄だったら代替テキスト入れる
 function setValue(value) {
-    //空文字"",0,false,undefined,nullのときfalse、それ以外はそのまま返す
-    if (value) {
-        return value;
+    //空文字''のとき、変換
+    if (value == '') {
+        return '---';
     }
-    //0のときもそのまま返す
-    if (value == 0) {
-        return value;
-    }
-    //空文字"",false,undefined,nullのとき
-    return '---';
-
+    return value;
 }
 
 //アイコン項目が空のとき、no-image.webpを差し込む
