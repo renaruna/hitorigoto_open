@@ -216,31 +216,10 @@ header {
     vertical-align: bottom;
 }
 
-/* タブレット:520px～768px(960px) */
-@media (max-width: 768px) {
-    .breadcrumbs {
-        top: 7px;
-        left: 40px;
-        font-size: 0.8em;
-    }
-
-    #here {
-        position: absolute;
-        top: 22px;
-        left: 40px;
-        max-width: 28em;
-    }
-
-}
-
 /* スマホ:(320px)360px～520px */
 @media (max-width: 520px) {
-    .breadcrumbs {
-        top: 7px;
-        left: 30px;
-        font-size: 0.8em;
-    }
 
+    /* ホームを家アイコンのみにする */
     .phone-content a {
         display: inline;
     }

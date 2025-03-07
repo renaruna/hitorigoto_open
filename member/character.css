@@ -168,3 +168,22 @@ li {
     font-size: 0.7em;
     font-weight: normal;
 }
+
+/* タブレット:520px～768px(960px) */
+@media (max-width: 768px) {
+
+    /* パンくずリスト2段にする */
+    .breadcrumbs {
+        top: 7px;
+        left: 40px;
+        font-size: 0.8em;
+    }
+
+    #here {
+        position: absolute;
+        top: 22px;
+        left: 40px;
+        max-width: 28em;
+    }
+
+}
