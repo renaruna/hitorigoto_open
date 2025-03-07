@@ -174,12 +174,13 @@ header {
 /*--- パンくずリスト ---*/
 .breadcrumbs {
     margin: 0;
+    padding: 0;
 
     list-style: none;
 
     position: fixed;
     top: 12px;
-    left: 50px;
+    left: 70px;
     z-index: 20;
 }
 
@@ -398,8 +399,8 @@ footer {
 
     /*--- パンくずリスト（ホームを家アイコンのみにする） ---*/
     /* ロゴ縮小に伴い */
-    .breadcrumbs {
-        left: 15px;
+    ol.breadcrumbs {
+        left: 45px;
     }
 
     .phone-content a {

@@ -203,14 +203,14 @@ a[href='']#charaLink {
     /* パンくずリスト2段にする */
     .breadcrumbs {
         top: 7px;
-        left: 40px;
+        left: 70px;
         font-size: 0.8em;
     }
 
     #here {
         position: absolute;
         top: 22px;
-        left: 40px;
+        left: 6px;
         max-width: 28em;
     }
 
