@@ -184,6 +184,10 @@ a:hover {
     font-weight: normal;
 }
 
+a[href='']#charaLink {
+    text-decoration-line: none;
+}
+
 @media (max-width: 645px) {
     .detail {
         margin: 20px auto;

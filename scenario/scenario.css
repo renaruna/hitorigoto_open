@@ -134,6 +134,10 @@ h3 {
     transform: scale(1.2);
 }
 
+.pc-character a[href="../member/"] {
+    pointer-events: none;
+}
+
 .charaImg {
     width: 120px;
     height: 140px;

@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+a[href=''] {
+    pointer-events: none;
+}
+
 /*--- フォント ---*/
 .zen-kaku-gothic-new-regular {
     font-family: "Zen Kaku Gothic New", sans-serif;
