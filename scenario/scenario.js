@@ -21,6 +21,8 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
 
         //シナリオURL
         const scenarioUrl = setValue(data.scenario.scenarioURL);
+        console.log(data.scenario.scenarioURL);
+        console.log(scenarioUrl);
         if (URL.canParse(scenarioUrl)) {
             urlHtml = '<a target="_blank" rel="noopener noreferrer" href="' + scenarioUrl + '">' + scenarioUrl + '</a>';
             scenarioURLElement.innerHTML = urlHtml;
