@@ -189,7 +189,7 @@ header {
     list-style: none;
 }
 
-.breadcrumbs li a {
+.breadcrumbs a {
     padding: 0.2em 0.5em;
     border-radius: 5px;
     background: #f5ece3;
@@ -206,11 +206,12 @@ header {
 
 .breadcrumbs li:after {
     content: '>';
-    padding: 0 0.5em;
+    padding: 0 0 0 0.5em;
 }
 
 .breadcrumbs li:last-child:after {
     content: '';
+    padding: 0;
 }
 
 /*スマホ用表示（家アイコンだけ）を消す*/
@@ -400,15 +401,17 @@ footer {
     /*--- パンくずリスト（ホームを家アイコンのみにする） ---*/
     /* ロゴ縮小に伴い */
     ol.breadcrumbs {
-        left: 45px;
+        left: 40px;
     }
 
     .phone-content a {
         display: inline;
+        padding: 3px 6px;
     }
 
     .breadcrumbs .phone-content:after {
         display: inline;
+        padding: 0 0 0 4px;
     }
 
     .pc-content a {
