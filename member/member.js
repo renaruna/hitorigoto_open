@@ -23,9 +23,9 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
 
         // 探索者たちがflexで並べられている→最後の行のボックスたちを左寄せにしたい
         // →空白のボックスを用意する
-        blankNum = 6 - (existCharaNum % 6);
+        blankNum = 7 - (existCharaNum % 7);
         for (let i = 0; i < blankNum; i++) {
-            characterHtml += '<a style="width:123px;"></a>';
+            characterHtml += '<a class="blank-box"></a>';
         }
 
         characterElement.innerHTML = characterHtml;
@@ -33,8 +33,8 @@ fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG
         //KP一覧
         let kpHtml = '';
         for (let i = 0; i < kpArray.length; i++) {
-            kpHtml += '<a href="../../scenario/' + kpArray[i].scenarioFilename + '">'
-                + kpArray[i].scenarioName + '</a><br>';
+            kpHtml += '<p><a href="../../scenario/' + kpArray[i].scenarioFilename + '">'
+                + kpArray[i].scenarioName + '</a></p>';
         }
         //最後の改行文字を消して埋め込み
         kpElement.innerHTML = kpHtml.slice(0, -4);

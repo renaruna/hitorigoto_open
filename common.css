@@ -440,4 +440,10 @@ footer {
         margin: 0;
         padding-bottom: 5px;
     }
+
+    /*--- アコーディオン ---*/
+    .accordion-content .close-btn {
+        margin: 2px auto;
+        font-size: 11px;
+    }
 }
