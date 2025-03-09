@@ -3,22 +3,23 @@ a {
 }
 
 .scenario-lists {
-    max-width: 950px;
-    width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /*ボタン*/
-.kasira-btn {
+.kasira-btn-list {
+    max-width: 740px;
+    width: 95%;
+    margin: 0 auto 20px;
+}
+
+.kasira-btns {
     display: flex;
     flex-direction: row;
     /*折り返しあり*/
     flex-wrap: wrap;
-    /*左詰め*/
-    justify-content: flex-start;
-    align-items: flex-end;
-
-    margin: 0 auto 20px;
+    justify-content: center;
 }
 
 .btn {
@@ -49,8 +50,9 @@ a {
 }
 
 .attention {
-    padding: 0 6px;
+    padding: 0 0 0 10px;
     margin: 0;
+    width: fit-content;
 }
 
 /*シナリオリスト*/
@@ -67,13 +69,19 @@ ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 auto;
+    width: 90%;
 }
 
 .kasira-list {
     margin: 2px;
-    width: 300px;
+    width: 30%;
+}
+
+.blank-box {
+    margin: 2px;
+    width: 30%;
 }
 
 .kasira-list .accordion-title {
@@ -85,7 +93,7 @@ ul {
 }
 
 .kasira-list ul {
-    padding-left: 10px;
+    padding: 0 5px;
 }
 
 .kasira-list li {
@@ -100,4 +108,83 @@ ul {
 
 .kasira-list a:hover {
     text-decoration: underline;
+}
+
+/*--- アコーディオンは2列に並べる ---*/
+@media (max-width: 800px) {
+    .kasira-btn-list {
+        width: 500px;
+    }
+
+    .kasira-btns {
+        width: 370px;
+        margin: 0 auto;
+    }
+
+    .attention {
+        margin: 0 auto;
+    }
+
+    .kasira-lists {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .kasira-list {
+        max-width: 300px;
+        width: 48%;
+    }
+}
+
+/*--- アコーディオンは1列に並べる ---*/
+@media (max-width: 520px) {
+
+    .kasira-btn-list {
+        width: 90%;
+    }
+
+    .kasira-btns {
+        width: 270px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        font-size: large;
+        width: 30px;
+        height: 30px;
+    }
+
+    .attention {
+        font-size: smaller;
+    }
+
+    .kasira-lists {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .kasira-list {
+        width: 100%;
+    }
+
+    .blank-box {
+        width: 296px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .kasira-list ul {
+        margin-bottom: 10px;
+    }
+
+    .kasira-list li {
+        height: 20px;
+        padding-bottom: 1px;
+    }
+
+    .kasira-list a {
+        font-size: smaller;
+    }
 }
