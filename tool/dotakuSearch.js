@@ -19,7 +19,7 @@ if (pldotakuFormElement) {
         const inputPlArray = [formData.get('pl1'), formData.get('pl2'), formData.get('pl3'), formData.get('pl4')]
         //重複チェック
         if (isDuplicated(inputPlArray)) {
-            errorElement.textContent = '入力が重複しています';
+            errorElement.textContent = '入力が重複しています。';
             resultElement.textContent = '';
             return;
         };
@@ -35,16 +35,17 @@ if (pldotakuFormElement) {
             });
 
             // 4. サーバーからのレスポンス（受信データ）を解析
-            const resultArray = await response.json();
+            const responseBody = await response.json();
 
-            //結果の件数
-            const resultNum = resultArray.length;
-            //0件の場合、メッセージ出して終了
-            if (resultNum == 0) {
-                errorElement.textContent = '結果は0件です';
+            //エラーがある場合messageを表示
+            if (!responseBody.success) {
+                errorElement.textContent = responseBody.message;
                 resultElement.textContent = '';
                 return;
             }
+
+            //正常に受け取っていれば、結果データ取得
+            const resultArray = responseBody.data;
 
             //結果表に出すPCの数（＝列の数）をカウント
             // PL4が入力されてたら、4人としてカウントしてPC4まで表示する
@@ -69,7 +70,7 @@ if (pldotakuFormElement) {
             resultHtml += '</tr></thead><tbody>';
 
             //表の中身（結果）部分
-            for (let i = 0; i < resultNum; i++) {
+            for (let i = 0; i < resultArray.length; i++) {
                 resultHtml += '<tr>';
                 resultHtml += '<td><a href="../scenario/' + resultArray[i].scenarioFileName + '">' + resultArray[i].scenarioName + '</a></td>'
                 resultHtml += '<td>' + resultArray[i].pc1Name + '</td>'
@@ -87,9 +88,12 @@ if (pldotakuFormElement) {
             //HTMLを挿入して表示
             resultElement.innerHTML = resultHtml;
 
-        } catch (error) {
-            errorElement.textContent = 'エラーが発生しました';
+        } catch (netError) {
+            //そもそもGASに繋がらなかった、URLが間違っているなどの通信エラー
+            errorElement.textContent = '';
             resultElement.textContent = '';
+            console.error("通信エラーが発生しました:", netError);
+            alert("通信エラーが発生しました。時間を置いてやり直してください。");
         }
     });
 }
@@ -115,7 +119,7 @@ if (kppldotakuFormElement) {
         const inputMemberArray = [formData.get('member1'), formData.get('member2'), formData.get('member3'), formData.get('member4')]
         //重複チェック
         if (isDuplicated(inputMemberArray)) {
-            errorElement.textContent = '入力が重複しています';
+            errorElement.textContent = '入力が重複しています。';
             resultElement.textContent = '';
             return;
         };
@@ -131,20 +135,21 @@ if (kppldotakuFormElement) {
             });
 
             // 4. サーバーからのレスポンス（受信データ）を解析
-            const resultArray = await response.json();
+            const responseBody = await response.json();
 
-            //結果の件数
-            const resultNum = resultArray.length;
-            //0件の場合、メッセージ出して終了
-            if (resultNum == 0) {
-                errorElement.textContent = '結果は0件です';
+            //エラーがある場合messageを表示
+            if (!responseBody.success) {
+                errorElement.textContent = responseBody.message;
                 resultElement.textContent = '';
                 return;
             }
 
+            //正常に受け取っていれば、結果データ取得
+            const resultArray = responseBody.data;
+
             //結果はリストで表示
             let resultHtml = '<ul>';
-            for (let i = 0; i < resultNum; i++) {
+            for (let i = 0; i < resultArray.length; i++) {
                 resultHtml += '<li><a href="../scenario/' + resultArray[i].scenarioFileName + '">' + resultArray[i].scenarioName + '</a></li>'
             }
             resultHtml += '</ul>';
@@ -152,9 +157,12 @@ if (kppldotakuFormElement) {
             //HTMLを挿入して表示
             resultElement.innerHTML = resultHtml;
 
-        } catch (error) {
-            errorElement.textContent = 'エラーが発生しました';
+        } catch (netError) {
+            //そもそもGASに繋がらなかった、URLが間違っているなどの通信エラー
+            errorElement.textContent = '';
             resultElement.textContent = '';
+            console.error("通信エラーが発生しました:", netError);
+            alert("通信エラーが発生しました。時間を置いてやり直してください。");
         }
     });
 }
