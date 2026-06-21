@@ -41,7 +41,7 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
         // PL4が入力されてたら、4人としてカウントしてPC4まで表示する
         let plcount = 0;
         const MAX_PLAYER = 4;
-        for (let i = MAX_PLAYER; i > 2; i--) {
+        for (let i = MAX_PLAYER - 1; i > 1; i--) {
             if (inputPlArray[i] !== '') {
                 plcount = i;
                 break;

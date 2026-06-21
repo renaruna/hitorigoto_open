@@ -18,6 +18,11 @@ a:hover {
     padding: 0 10px;
 }
 
+.input form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .input_options {
     display: flex;
     flex-wrap: wrap;
