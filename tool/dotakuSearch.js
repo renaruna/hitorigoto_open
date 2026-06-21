@@ -1,25 +1,29 @@
 document.getElementById('pldotakuForm').addEventListener('submit', async (event) => {
     // 1. ページのリロード（通常のフォーム送信挙動）を防ぐ
     event.preventDefault();
+    //エラーを表示させるところ
+    const errorElement = document.getElementById('input_error');
+    //結果HTMLを表示させるところ
+    const resultElement = document.getElementById('result')
+    //検索ボタン押すたび初期化
+    errorElement.textContent = '';
+    resultElement.textContent = '';
 
     // 2. フォーム内のデータを自動で回収する
     let formData = new FormData(event.target);
 
     //入力を配列に変換
     const inputPlArray = [formData.get('pl1'), formData.get('pl2'), formData.get('pl3'), formData.get('pl4')]
-
-    //エラーを表示させるところ
-    const errorElement = document.getElementById('input_error');
     //重複チェック
     if (isDuplicated(inputPlArray)) {
         errorElement.textContent = '入力が重複しています';
         return;
     };
 
-    //GASでの処理分けのため追加
-    formData.append('tool', 'pldotaku');
-
     try {
+        //GASでの処理分けのため追加
+        formData.append('tool', 'pldotaku');
+
         // 3. Fetchでデータを送信
         const response = await fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJSWFcp5m5pXt8NxMkoqeSRB5wq900Xt-hwI/exec', {
             method: 'POST',
@@ -41,8 +45,8 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
         // PL4が入力されてたら、4人としてカウントしてPC4まで表示する
         let plcount = 0;
         const MAX_PLAYER = 4;
-        for (let i = MAX_PLAYER - 1; i > 1; i--) {
-            if (inputPlArray[i] !== '') {
+        for (let i = MAX_PLAYER; i > 2; i--) {
+            if (inputPlArray[i - 1] !== '') {
                 plcount = i;
                 break;
             }
@@ -76,8 +80,8 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
         resultHtml += '</tbody></table>';
 
         //HTMLを挿入して表示
-        document.getElementById('result').innerHTML = resultHtml;
-        errorElement.textContent = plcount;
+        resultElement.innerHTML = resultHtml;
+        errorElement.textContent = resultNum;
 
     } catch (error) {
         errorElement.textContent = 'エラーが発生しました';
