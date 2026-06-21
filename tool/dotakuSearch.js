@@ -90,15 +90,76 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     }
 });
 
+document.getElementById('kppldotakuForm').addEventListener('submit', async (event) => {
+    // 1. ページのリロード（通常のフォーム送信挙動）を防ぐ
+    event.preventDefault();
+    //エラーを表示させるところ
+    const errorElement = document.getElementById('input_error');
+    //結果HTMLを表示させるところ
+    const resultElement = document.getElementById('result')
+    //検索ボタン押すたびエラー表示は消して、結果表示欄はロード中のマークに。
+    errorElement.textContent = '';
+    resultElement.innerHTML = '<i class="fas fa-circle-notch faa-spin animated">';
+
+    // 2. フォーム内のデータを自動で回収する
+    let formData = new FormData(event.target);
+
+    //入力を配列に変換
+    const inputMemberArray = [formData.get('member1'), formData.get('member2'), formData.get('member3'), formData.get('member4')]
+    //重複チェック
+    if (isDuplicated(inputMemberArray)) {
+        errorElement.textContent = '入力が重複しています';
+        resultElement.textContent = '';
+        return;
+    };
+
+    try {
+        //GASでの処理分けのため追加
+        formData.append('tool', 'kppldotaku');
+
+        // 3. Fetchでデータを送信
+        const response = await fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJSWFcp5m5pXt8NxMkoqeSRB5wq900Xt-hwI/exec', {
+            method: 'POST',
+            body: formData,
+        });
+
+        // 4. サーバーからのレスポンス（受信データ）を解析
+        const resultArray = await response.json();
+
+        //結果の件数
+        const resultNum = resultArray.length;
+        //0件の場合、メッセージ出して終了
+        if (resultNum == 0) {
+            errorElement.textContent = '結果は0件です';
+            resultElement.textContent = '';
+            return;
+        }
+
+        //結果はリストで表示
+        let resultHtml = '<ul>';
+        for (let i = 0; i < resultNum; i++) {
+            resultHtml += '<li><a href="../scenario/' + resultArray[i].scenarioFileName + '">' + resultArray[i].scenarioName + '</a></li>'
+        }
+        resultHtml += '</ul>';
+
+        //HTMLを挿入して表示
+        resultElement.innerHTML = resultHtml;
+
+    } catch (error) {
+        errorElement.textContent = 'エラーが発生しました';
+        resultElement.textContent = '';
+    }
+});
+
 //重複しているときTrue、重複していないときFalseを返す
-function isDuplicated(inputPlArray) {
+function isDuplicated(inputArray) {
     //Setオブジェクトで一意の値を格納できる＝重複しているものは一つの値として格納される
-    const setElements = new Set(inputPlArray);
+    const setElements = new Set(inputArray);
 
     //長さが違えば重複している要素があるということ
-    if (setElements.size !== inputPlArray.length) {
+    if (setElements.size !== inputArray.length) {
         //PL3,4が未入力の場合は重複とは判定せず、処理を継続
-        if (inputPlArray[2] == '' && inputPlArray[3] == '') {
+        if (inputArray[2] == '' && inputArray[3] == '') {
             return false;
         }
         return true;

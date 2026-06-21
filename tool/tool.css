@@ -87,3 +87,7 @@ a:hover {
 .output tbody tr:nth-child(odd) {
     background-color: white;
 }
+
+.output ul {
+    padding-left: 1em;
+}
