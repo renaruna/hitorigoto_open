@@ -5,9 +5,9 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     const errorElement = document.getElementById('input_error');
     //結果HTMLを表示させるところ
     const resultElement = document.getElementById('result')
-    //検索ボタン押すたび初期化
+    //検索ボタン押すたびエラー表示は消して、結果表示欄はロード中のマークに。
     errorElement.textContent = '';
-    resultElement.textContent = '';
+    resultElement.innerHTML = '<i class="fas fa-circle-notch faa-spin animated">';
 
     // 2. フォーム内のデータを自動で回収する
     let formData = new FormData(event.target);
@@ -17,6 +17,7 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     //重複チェック
     if (isDuplicated(inputPlArray)) {
         errorElement.textContent = '入力が重複しています';
+        resultElement.textContent = '';
         return;
     };
 
@@ -38,6 +39,7 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
         //0件の場合、メッセージ出して終了
         if (resultNum == 0) {
             errorElement.textContent = '結果は0件です';
+            resultElement.textContent = '';
             return;
         }
 
@@ -81,10 +83,10 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
 
         //HTMLを挿入して表示
         resultElement.innerHTML = resultHtml;
-        errorElement.textContent = resultNum;
 
     } catch (error) {
         errorElement.textContent = 'エラーが発生しました';
+        resultElement.textContent = '';
     }
 });
 
