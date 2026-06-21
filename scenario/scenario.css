@@ -185,4 +185,46 @@ h3 {
         max-width: 28em;
     }
 
+    .pl {
+        max-width: 9em;
+        padding-bottom: 10px;
+    }
+
+}
+
+/*--- スマホ:(320px)360px～520px ---*/
+@media (max-width: 520px) {
+    h2 {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 13px;
+        margin: 10px 0 0 0;
+    }
+
+    .basic-info,
+    .sessions {
+        font-size: smaller;
+    }
+
+    .basic-info {
+        min-width: unset;
+        padding: 10px;
+    }
+
+    .detail {
+        min-width: unset;
+        width: 280px;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    p.kp {
+        padding: 0 0 5px 10px;
+    }
+
+    .charaImg p {
+        top: 115px;
+    }
 }
