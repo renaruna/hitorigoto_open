@@ -166,8 +166,8 @@ function isDuplicated(inputArray) {
 
     //長さが違えば重複している要素があるということ
     if (setElements.size !== inputArray.length) {
-        //PL3,4が未入力の場合は重複とは判定せず、処理を継続
-        if (inputArray[2] == '' && inputArray[3] == '') {
+        //PL3,4が未入力の場合かつPL1,2が重複していない場合は、重複していないため除く
+        if (inputArray[2] == '' && inputArray[3] == '' && setElements.size > 2) {
             return false;
         }
         return true;
