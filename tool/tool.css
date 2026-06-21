@@ -7,43 +7,14 @@ a:hover {
     text-decoration: underline;
 }
 
+.tool-contents {
+    max-width: 1000px;
+}
+
 .tool-content {
     margin: 20px auto;
     width: 90%;
     padding: 0 10px;
-}
-
-.tool-content table {
-    width: 100%;
-    height: 100%;
-    max-width: 1000px;
-    border-collapse: collapse;
-
-}
-
-.tool-content thead th {
-    position: relative;
-    width: 20%;
-    background-color: #999;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    border: 1px solid white;
-}
-
-.tool-content tbody td {
-    width: 20%;
-    text-align: center;
-    padding: 10px 0;
-    border: 1px solid white;
-}
-
-.tool-content tbody tr {
-    background-color: #eee;
-}
-
-.tool-content tbody tr:nth-child(odd) {
-    background-color: white;
 }
 
 .input_options {
@@ -72,4 +43,41 @@ a:hover {
 .input button:hover {
     background-color: #999;
     color: white;
+}
+
+#input_error {
+    color: red;
+}
+
+.output table {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+
+}
+
+.output thead th {
+    position: relative;
+    width: 20%;
+    background-color: #999;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid white;
+}
+
+.output tbody td {
+    width: 20%;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid white;
+}
+
+.output tbody tr {
+    background-color: #eee;
+}
+
+.output tbody tr:nth-child(odd) {
+    background-color: white;
 }
