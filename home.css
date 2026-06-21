@@ -1,5 +1,6 @@
 .home-contents {
     max-width: 750px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -55,13 +56,33 @@
     border: 2px solid #eee;
 }
 
-/*--- このサイトについて ---*/
-
+/*--- 説明（注意事項、このサイトについて） ---*/
 .description-content p {
     margin: 0.2em 0;
+    padding-left: 20px;
 }
 
 .siteImg {
     width: 60%;
     padding-left: 40px;
+}
+
+/*--- スマホ:(320px)360px～520px ---*/
+@media (max-width: 520px) {
+
+    .home-contents {
+        font-size: smaller;
+    }
+
+    .home-contents h2 {
+        margin: 20px 0 0 0;
+    }
+
+    .home-contents p {
+        padding-left: 20px;
+    }
+
+    .description-content p {
+        padding-left: 0px;
+    }
 }
