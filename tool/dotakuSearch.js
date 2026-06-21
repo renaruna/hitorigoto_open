@@ -11,9 +11,10 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     //エラーを表示させるところ
     const errorElement = document.getElementById('input_error');
     //重複チェック
-
-    errorElement.textContent = inputPlArray;
-
+    if (isDuplicated(inputPlArray)) {
+        errorElement.textContent = '入力が重複しています';
+        return;
+    };
 
     //GASでの処理分けのため追加
     formData.append('tool', 'pldotaku');
@@ -76,6 +77,7 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
 
         //HTMLを挿入して表示
         document.getElementById('result').innerHTML = resultHtml;
+        errorElement.textContent = plcount;
 
     } catch (error) {
         errorElement.textContent = 'エラーが発生しました';
@@ -86,6 +88,15 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
 function isDuplicated(inputPlArray) {
     //Setオブジェクトで一意の値を格納できる＝重複しているものは一つの値として格納される
     const setElements = new Set(inputPlArray);
+
     //長さが違えば重複している要素があるということ
-    return setElements.size !== inputPlArray.length;
+    if (setElements.size !== inputPlArray.length) {
+        //PL3,4が未入力の場合は重複とは判定せず、処理を継続
+        if (inputPlArray[2] == '' && inputPlArray[3] == '') {
+            return false;
+        }
+        return true;
+    } else {
+        return false;
+    }
 }
