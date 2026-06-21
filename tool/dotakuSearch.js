@@ -6,13 +6,13 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     let formData = new FormData(event.target);
 
     //入力を配列に変換
-    const inputPlArray = [formData.pl1, formData.pl2, formData.pl3, formData.pl4]
+    const inputPlArray = [formData.get('pl1'), formData.get('pl2'), formData.get('pl3'), formData.get('pl4')]
 
     //エラーを表示させるところ
     const errorElement = document.getElementById('input_error');
     //重複チェック
 
-        errorElement.textContent = inputPlArray;
+    errorElement.textContent = inputPlArray;
 
 
     //GASでの処理分けのため追加
@@ -61,7 +61,7 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
         //表の中身（結果）部分
         for (let i = 0; i < resultNum; i++) {
             resultHtml += '<tr>';
-            resultHtml += '<a href="../scenario/' + resultArray[i].scenarioFileName + '">' + resultArray[i].scenarioName + '</a></td>'
+            resultHtml += '<td><a href="../scenario/' + resultArray[i].scenarioFileName + '">' + resultArray[i].scenarioName + '</a></td>'
             resultHtml += '<td>' + resultArray[i].pc1Name + '</td>'
             resultHtml += '<td>' + resultArray[i].pc2Name + '</td>'
             if (plcount >= 3) {

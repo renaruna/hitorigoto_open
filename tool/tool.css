@@ -9,6 +9,7 @@ a:hover {
 
 .tool-contents {
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 .tool-content {
