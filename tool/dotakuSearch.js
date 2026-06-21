@@ -11,10 +11,9 @@ document.getElementById('pldotakuForm').addEventListener('submit', async (event)
     //エラーを表示させるところ
     const errorElement = document.getElementById('input_error');
     //重複チェック
-    if (isDuplicated(inputPlArray)) {
-        errorElement.textContent = '入力が重複しています';
-        return;
-    };
+
+        errorElement.textContent = inputPlArray;
+
 
     //GASでの処理分けのため追加
     formData.append('tool', 'pldotaku');
