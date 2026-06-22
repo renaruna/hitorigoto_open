@@ -1,7 +1,16 @@
-fetch('https://script.google.com/macros/s/AKfycbwa2cetqBvNrHkmr-i8gaiMUC12uDHoAG4RI7XYIzyHh4UW_joqJTGSp5fQqENEzjCq/exec'
+fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJSWFcp5m5pXt8NxMkoqeSRB5wq900Xt-hwI/exec'
     + '?tool=character&member=' + member + '&charaID=' + charaID)
     .then(response => response.json())
-    .then(function (data) {
+    .then(function (responseBody) {
+        //エラーがある場合messageを表示
+        if (!responseBody.success) {
+            console.error('エラー:', responseBody.message);
+            alert(`エラーが発生しました: ${responseBody.message}`);
+        }
+
+        //正常に受け取っていれば、データ取得
+        const data = responseBody.data;
+
         //タイトル
         document.title = data.charaName + '/独り言卓INDEX';
 
