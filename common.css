@@ -449,9 +449,16 @@ footer {
 
     .accordion-title {
         .accordion-mark {
-            top: 15%;
+            top: 30%;
             right: 5%;
             font-size: smaller;
+        }
+    }
+
+    /* シナリオ一覧の▲だけ下すぎるので */
+    .scenario-lists {
+        .accordion-mark {
+            top: 15%;
         }
     }
 
