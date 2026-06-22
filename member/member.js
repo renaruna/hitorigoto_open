@@ -2,10 +2,24 @@ fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJ
     + '?tool=member&member=' + member)
     .then(response => response.json())
     .then(function (responseBody) {
+        //受け取ったコンテンツを表示するところ
+        const characterElement = document.getElementById('member-character');
+        const kpElement = document.getElementById('member-kp');
+        const plElement = document.getElementById('member-pl');
+
         //エラーがある場合messageを表示
         if (!responseBody.success) {
             console.error('エラー:', responseBody.message);
-            alert(`エラーが発生しました: ${responseBody.message}`);
+            alert(`エラーが発生しました。必要であれば管理人にご連絡ください。\nメッセージ: ${responseBody.message}`);
+
+            const errorText = 'エラーのため読み込めません。';
+            characterElement.textContent = errorText;
+            characterElement.style.color = 'red';
+            kpElement.textContent = errorText;
+            kpElement.style.color = 'red';
+            plElement.textContent = errorText;
+            plElement.style.color = 'red';
+            return;
         }
 
         //正常に受け取っていれば、データ取得
@@ -14,10 +28,6 @@ fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJ
         const charaArray = data.chara;
         const kpArray = data.kp;
         const plArray = data.pl;
-
-        const characterElement = document.getElementById('member-character');
-        const kpElement = document.getElementById('member-kp');
-        const plElement = document.getElementById('member-pl');
 
         //キャラ一覧
         let characterHtml = '';

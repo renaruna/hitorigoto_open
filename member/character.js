@@ -5,7 +5,8 @@ fetch('https://script.google.com/macros/s/AKfycbyT4BAclnAPMRHC7kbEojQc_bE1AtvflJ
         //エラーがある場合messageを表示
         if (!responseBody.success) {
             console.error('エラー:', responseBody.message);
-            alert(`エラーが発生しました: ${responseBody.message}`);
+            alert(`エラーが発生しました。ホーム画面に戻ってください。\nメッセージ: ${responseBody.message}`);
+            return;
         }
 
         //正常に受け取っていれば、データ取得

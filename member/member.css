@@ -210,12 +210,12 @@ a {
 /* GM履歴 */
 #member-kp {
     padding: 5px 20px 10px;
-    text-align: center;
 }
 
 #member-kp p {
     padding-bottom: 1px;
     margin: 0;
+    text-align: center;
 }
 
 #member-kp a {
